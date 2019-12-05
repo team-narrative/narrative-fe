@@ -2,8 +2,38 @@
 
 exports[`App component renders App 1`] = `
 <Fragment>
-  <h1>
-    Hi There!
-  </h1>
+  <BrowserRouter>
+    <Switch>
+      <PrivateRoute
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": [Function],
+            "compare": null,
+            "displayName": "Connect(UserForm)",
+            "type": [Function],
+          }
+        }
+        path="/signup"
+      />
+      <Route
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": [Function],
+            "compare": null,
+            "displayName": "Connect(UserForm)",
+            "type": [Function],
+          }
+        }
+        path="/login"
+      />
+    </Switch>
+  </BrowserRouter>
 </Fragment>
 `;
