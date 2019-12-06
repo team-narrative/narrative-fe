@@ -5,14 +5,15 @@ import {
   Switch
 } from 'react-router-dom';
 import { withSession } from '../Auth0Provider';
-import TestContainer from '../containers/TestContainer';
+// import TestContainer from '../containers/TestContainer';
+import EditForm from './editView/EditForm';
 
 export default function App() {
   return (
     <>
       <Router>
         <Switch>
-          <Route exact path="/" component={withSession(TestContainer)} />
+          <Route exact path="/" component={withSession(EditForm)} />
         </Switch>
       </Router>
 
