@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AboutDeveloper component renders an about developer card 1`] = `
+exports[`AboutDeveloperCard component renders an about developer card 1`] = `
 <Fragment>
   <h2>
     developer
