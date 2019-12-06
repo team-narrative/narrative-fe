@@ -21,7 +21,7 @@ AboutDeveloperCards.propTypes = {
     developerName: PropTypes.string.isRequired,
     developerImage: PropTypes.string.isRequired,
     developerBio: PropTypes.string.isRequired
-  }))
+  })).isRequired
 };
 
 export default AboutDeveloperCards;
