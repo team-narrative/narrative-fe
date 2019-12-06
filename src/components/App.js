@@ -12,7 +12,7 @@ export default function App() {
     <>
       <Router>
         <Switch>
-          <Route exact path="/" component={withSession(TestContainer)} />
+          <Route exact path="/stories" component={withSession(TestContainer)} />
         </Switch>
       </Router>
 
