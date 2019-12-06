@@ -13,7 +13,7 @@ export default function App() {
     <>
       <Router>
         <Switch>
-          <Route exact path="/" component={withSession(EditForm)} />
+          <Route exact path="/stories" component={withSession(EditForm)} />
         </Switch>
       </Router>
 
