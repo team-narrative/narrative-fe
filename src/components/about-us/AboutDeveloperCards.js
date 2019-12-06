@@ -4,8 +4,8 @@ import AboutDeveloperCard from './AboutDeveloperCard';
 
 const AboutDeveloperCards = ({ aboutDeveloperCards }) => {
   const aboutDeveloperElements = aboutDeveloperCards.map(card => (
-    <div key={card.name}>
-      <AboutDeveloperCard developerName={card.name} developerImage={card.image} developerBio={card.bio}/>
+    <div key={card.developerName}>
+      <AboutDeveloperCard developerName={card.developerName} developerImage={card.developerImage} developerBio={card.developerBio}/>
     </div>
   ));
 
@@ -18,9 +18,9 @@ const AboutDeveloperCards = ({ aboutDeveloperCards }) => {
 
 AboutDeveloperCards.propTypes = {
   aboutDeveloperCards: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    bio: PropTypes.string.isRequired
+    developerName: PropTypes.string.isRequired,
+    developerImage: PropTypes.string.isRequired,
+    developerBio: PropTypes.string.isRequired
   }))
 };
 
