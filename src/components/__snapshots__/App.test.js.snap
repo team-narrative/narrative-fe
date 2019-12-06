@@ -4,34 +4,10 @@ exports[`App component renders App 1`] = `
 <Fragment>
   <BrowserRouter>
     <Switch>
-      <PrivateRoute
+      <Route
         component={[Function]}
         exact={true}
         path="/"
-      />
-      <Route
-        component={
-          Object {
-            "$$typeof": Symbol(react.memo),
-            "WrappedComponent": [Function],
-            "compare": null,
-            "displayName": "Connect(UserForm)",
-            "type": [Function],
-          }
-        }
-        path="/signup"
-      />
-      <Route
-        component={
-          Object {
-            "$$typeof": Symbol(react.memo),
-            "WrappedComponent": [Function],
-            "compare": null,
-            "displayName": "Connect(UserForm)",
-            "type": [Function],
-          }
-        }
-        path="/login"
       />
     </Switch>
   </BrowserRouter>
