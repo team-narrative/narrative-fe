@@ -1,6 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import createAuth0Client from '@auth0/auth0-spa-js';
 import { setToken } from './services/narrativeApi';
+import 'regenerator-runtime/runtime';
 
 const DEFAULT_REDIRECT_CALLBACK = () => {
   window.history.replaceState({},
@@ -15,7 +16,9 @@ export const withSession = Comp => {
   return function WithSessionHOC(props) {
     const { isAuthenticated, loading, auth0Client } = useAuth0();
     if(!isAuthenticated && !loading) auth0Client.loginWithRedirect();
+
     if(!isAuthenticated && loading) return null;
+
     return <Comp {...props} />;
   };
 };
