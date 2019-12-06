@@ -2,8 +2,8 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import App from './components/App';
-import store from './store';
 import Auth0Provider from './Auth0Provider';
+import store from './store';
 
 render(
   <Auth0Provider
