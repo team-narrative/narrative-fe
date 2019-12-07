@@ -5,10 +5,10 @@ import Chapter from './Chapter';
 const ChapterList = ({ chapters }) => {
   let storyChapters;
   if(chapters.length > 0) {
-    storyChapters = chapters.map((chapters, i) => {
+    storyChapters = chapters.map((chapter, i) => {
       return (
-        <li key={chapters._id || i}>
-          <Chapter currentChapterName={chapters.chapterName} currentChapterDescription={chapters.chapterDescription}/>
+        <li key={chapter._id || i}>
+          <Chapter currentChapterName={chapter.chapterName} currentChapterDescription={chapter.chapterDescription}/>
         </li>
       );
     });
