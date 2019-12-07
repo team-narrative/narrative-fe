@@ -4,8 +4,8 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
-import { withSession } from '../Auth0Provider';
 import TestContainer from '../containers/TestContainer';
+import { withSession } from '../Auth0Provider';
 
 export default function App() {
   return (
