@@ -4,16 +4,17 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
-import { withSession } from '../Auth0Provider';
+// import { withSession } from '../Auth0Provider';
 // import TestContainer from '../containers/TestContainer';
 import EditForm from './editView/EditForm';
+// import Character from './character/Character';
 
 export default function App() {
   return (
     <>
       <Router>
         <Switch>
-          <Route exact path="/stories" component={withSession(EditForm)} />
+          <Route exact path="/stories" component={EditForm} />
         </Switch>
       </Router>
 
