@@ -4,7 +4,7 @@ import AddButton from '../AddButton';
 
 describe('AddButton component', () => {
   it('renders an add button', () => {
-    const wrapper = shallow(<AddButton onClick={() => true} />);
+    const wrapper = shallow(<AddButton handleAddClick={() => true} />);
     expect(wrapper).toMatchSnapshot();
   });
 });
