@@ -4,17 +4,15 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
+import CharacterList from './character/CharacterList';
 // import { withSession } from '../Auth0Provider';
-// import TestContainer from '../containers/TestContainer';
-// import EditForm from './editView/EditForm';
-import Character from './character/Character';
 
 export default function App() {
   return (
     <>
       <Router>
         <Switch>
-          <Route exact path="/stories" component={Character} />
+          <Route exact path="/stories" component={CharacterList} />
         </Switch>
       </Router>
 
