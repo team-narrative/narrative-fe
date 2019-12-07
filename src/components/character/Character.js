@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import ReactQuill from 'react-quill';
 import PropTypes from 'prop-types';
+import ReactQuill from 'react-quill';
 
-const EditForm = ({ handleSubmit }) => {
-  const [heading, setHeading] = useState('');
-  const [description, setDescription] = useState('');
+const Character = ({ handleSubmit, currentName, currentDescription }) => {
+  const [name, setName] = useState(currentName);
+  const [description, setDescription] = useState(currentDescription);
 
   const formats = [
     'header',
@@ -25,21 +25,22 @@ const EditForm = ({ handleSubmit }) => {
 
   const onSubmit = event => {
     event.preventDefault;
-    handleSubmit(heading, description);
-    
+    handleSubmit(name, description);
   };
 
   return (
     <form onSubmit={onSubmit}>
-      <input type="text" value={heading} placeholder="Write Name or Title" onChange={({ target }) => setHeading(target.value)} required />
+      <input type="text" value={name} onChange={({ target }) => setName(target.value)} required />
       <ReactQuill value={description} onChange={(value) => setDescription(value)} formats={formats} modules={modules} />
       <button>SUBMIT</button>
     </form>
   );
 };
 
-EditForm.propTypes = {
-  handleSubmit: PropTypes.func
+Character.propTypes = {
+  handleSubmit: PropTypes.func,
+  currentName: PropTypes.string,
+  currentDescription: PropTypes.string
 };
 
-export default EditForm;
+export default Character;
