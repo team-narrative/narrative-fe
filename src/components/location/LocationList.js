@@ -5,10 +5,10 @@ import Location from './Location';
 const LocationList = ({ locations }) => {
   let storyLocations;
   if(locations.length > 0) {
-    storyLocations = locations.map((locations, i) => {
+    storyLocations = locations.map((location, i) => {
       return (
-        <li key={locations._id || i}>
-          <Location currentLocationName={locations.LocationName} currentLocationDescription={locations.LocationDescription}/>
+        <li key={location._id || i}>
+          <Location currentLocationName={location.LocationName} currentLocationDescription={location.LocationDescription}/>
         </li>
       );
     });
