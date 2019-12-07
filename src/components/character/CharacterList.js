@@ -3,18 +3,24 @@ import PropTypes from 'prop-types';
 import Character from './Character';
 
 const CharacterList = ({ characters }) => {
-  const storyCharacters = characters.map((character, i) => {
-    return (
-      <li key={character._id || i}>
-        <Character currentName={character.characterName} currentDescription={character.characterDescription}/>
-      </li>
-    );
-  });
+  let storyCharacters;
+  if(characters.length > 0) {
+    storyCharacters = characters.map((character, i) => {
+      return (
+        <li key={character._id || i}>
+          <Character currentName={character.characterName} currentDescription={character.characterDescription}/>
+        </li>
+      );
+    });
+  }
 
   return (
-    <ul>
-      {storyCharacters}
-    </ul>
+    <div>
+      <h2>Characters</h2>
+      <ul>
+        {storyCharacters}
+      </ul>
+    </div>
   );
 };
 
