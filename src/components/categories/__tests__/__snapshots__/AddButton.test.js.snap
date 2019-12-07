@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddButton component renders an add button 1`] = `
+<button>
+  ⊕
+</button>
+`;
