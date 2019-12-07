@@ -19,7 +19,7 @@ const CurrentStory = ({ title, handleEditClick, synopsis }) => {
 CurrentStory.propTypes = {
   title: PropTypes.string.isRequired,
   handleEditClick: PropTypes.func.isRequired,
-  synopsis: PropTypes.func.isRequired
+  synopsis: PropTypes.string.isRequired
 };
 
 export default CurrentStory;
