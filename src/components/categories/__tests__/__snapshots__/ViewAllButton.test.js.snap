@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ViewAllButton component renders view all button 1`] = `
+<button
+  onClick={[Function]}
+>
+  View All
+</button>
+`;
