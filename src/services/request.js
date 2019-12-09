@@ -1,8 +1,14 @@
+let token = null;
+export const setToken = newToken => {
+  token = newToken;
+};
+
 const request = (url, method, body) => {
   return fetch(url, {
     method,
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
     },
     credentials: 'include',
     body: body && JSON.stringify(body)
