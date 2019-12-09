@@ -5,8 +5,9 @@ import { createStory } from '../../actions/storyActions';
 
 const StoryNavigation = ({ stories, handleSubmit }) => {
   
-  const [storySearch, setStorySearch] = useState('');
   const dispatch = useDispatch();
+  const [storySearch, setStorySearch] = useState('');
+
   const handleAddStory = (storyTitle, storySynopsis, storyGenre, storyTags) => {
     event.preventDefault();
     dispatch(createStory(storyTitle, storySynopsis, storyGenre, storyTags));
@@ -22,7 +23,6 @@ const StoryNavigation = ({ stories, handleSubmit }) => {
     <section>
       <form onSubmit={event => handleSubmit(event, storySearch)}>
         <button onClick={handleAddStory} value="button">⊕</button>
-
         <input name="story-search" type="text" placeholder="Search Stories" value={storySearch} onChange={({ target }) => setStorySearch(target.value)} />
 
         <ul>
