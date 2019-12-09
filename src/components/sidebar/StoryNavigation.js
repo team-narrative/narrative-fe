@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import { createStory } from '../../actions/storyActions';
 
-const StoryNavigation = ({ handleAddStory, stories, handleSubmit }) => {
+const StoryNavigation = ({ stories, handleSubmit }) => {
+  
   const [storySearch, setStorySearch] = useState('');
+  const dispatch = useDispatch();
+  const handleAddStory = (storyTitle, storySynopsis, storyGenre, storyTags) => {
+    event.preventDefault();
+    dispatch(createStory(storyTitle, storySynopsis, storyGenre, storyTags));
+  };
 
   const storyElements = stories.map(story => (
     <li key={story.title}>
@@ -13,7 +21,7 @@ const StoryNavigation = ({ handleAddStory, stories, handleSubmit }) => {
   return (
     <section>
       <form onSubmit={event => handleSubmit(event, storySearch)}>
-        <button onClick={handleAddStory}>⊕</button>
+        <button onClick={handleAddStory} value="button">⊕</button>
 
         <input name="story-search" type="text" placeholder="Search Stories" value={storySearch} onChange={({ target }) => setStorySearch(target.value)} />
 
@@ -26,7 +34,6 @@ const StoryNavigation = ({ handleAddStory, stories, handleSubmit }) => {
 };
 
 StoryNavigation.propTypes = {
-  handleAddStory: PropTypes.func.isRequired,
   stories: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string
   })),
