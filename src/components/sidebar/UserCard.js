@@ -1,16 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
+import { useSignout } from '../../Auth0Provider';
+ 
 const UserCard = ({ userName, userPicture }) => {
+
+  const logout = useSignout();
+  const handleLogOut = () => {
+    console.log('asdgasdg');
+    logout({
+      returnTo: 'http://localhost:7890/stories'
+    });
+  };
 
   return (
     <section>
-      <img src={userPicture} alt={userName}/>
+      <img src={userPicture} alt={userName} />
       <h3>{userName}</h3>
-      <Link to={`https://${process.env.AUTH0_DOMAIN}/v2/logout`}>
-        <button>LOGOUT</button>
-      </Link>
+      <button onClick={handleLogOut}>LOGOUT</button>
     </section>
   );
 };
