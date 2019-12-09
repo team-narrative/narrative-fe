@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const CurrentStory = ({ title, handleEditClick, synopsis }) => {
+const CurrentStory = ({ title, synopsis, handleEditClick }) => {
   return (
     <section>
       <div>
