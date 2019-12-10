@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCurrentStoryId } from '../../selectors/storySelectors';
-import styles from './DefaultView-Modal.css';
 import { putStoryByStoryId } from '../../services/stories';
 import { updateStoryById } from '../../actions/storyActions';
+import styles from './DefaultView-Modal.css';
 
 const DefaultViewModalEdit = ({ hideModal, show }) => {
 

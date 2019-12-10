@@ -3,16 +3,10 @@ import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { fetchStoryById } from '../../actions/storyActions';
 import { getStoryByStoryId } from '../../services/stories';
-// import { createStory } from '../../actions/storyActions';
 
 const StoryNavigation = ({ stories, handleSubmit }) => {
   const dispatch = useDispatch();
   const [storySearch, setStorySearch] = useState('');
-
-  // const handleAddStory = (storyTitle, storySynopsis, storyGenre, storyTags) => {
-  //   event.preventDefault();
-  //   dispatch(createStory(storyTitle, storySynopsis, storyGenre, storyTags));
-  // };
 
   const handleClick = (event) => {
     event.preventDefault();
