@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-// import Sidebar from './sidebar/Sidebar';
-// import StoryNavigation from './sidebar/StoryNavigation';
-import { createStory } from '../actions/storyActions';
+import { createStory } from '../../actions/storyActions';
 
 const DefaultView = () => {
   const dispatch = useDispatch();
