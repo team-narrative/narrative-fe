@@ -38,7 +38,6 @@ const StoryNavigation = ({ stories, handleSubmit }) => {
   return (
     <section>
       <form onSubmit={event => handleSubmit(event, storySearch)}>
-        {/* <button onClick={handleAddStory} value="button">⊕</button> */}
         <input name="story-search" type="text" placeholder="Search Stories" value={storySearch} onChange={({ target }) => setStorySearch(target.value)} />
 
         <ul>

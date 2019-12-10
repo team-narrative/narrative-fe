@@ -6,7 +6,7 @@ import styles from './DefaultView-Modal.css';
 import { putStoryByStoryId } from '../../services/stories';
 import { updateStoryById } from '../../actions/storyActions';
 
-const DefaultViewModalEdit = ({ handleClose, show }) => {
+const DefaultViewModalEdit = ({ hideModal, show }) => {
 
   const dispatch = useDispatch();
   const storyId = useSelector(state => getCurrentStoryId(state));
@@ -30,9 +30,9 @@ const DefaultViewModalEdit = ({ handleClose, show }) => {
           <form onSubmit={handleSubmit}>
             <p>Story Title ::</p><input placeholder="title" type="text" value={title} onChange={({ target }) => setTitle(target.value)}></input>
             <p>Story Synopsis ::</p> <input placeholder="synopsis" type="text" value={synopsis} onChange={({ target }) => setSynopsis(target.value)}></input>
-            <button value='button' onClick={handleClose}>Save changes</button>
+            <button value='button' onClick={hideModal}>Save changes</button>
           </form>
-          <button onClick={handleClose}>✗</button>
+          <button onClick={hideModal}>✗</button>
         </section>
       </div>
     </div>
@@ -40,7 +40,7 @@ const DefaultViewModalEdit = ({ handleClose, show }) => {
 };
 
 DefaultViewModalEdit.propTypes = {
-  handleClose: PropTypes.func,
+  hideModal: PropTypes.func,
   show: PropTypes.bool,
   children: PropTypes.string
 };
