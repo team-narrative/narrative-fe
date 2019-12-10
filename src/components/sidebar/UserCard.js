@@ -2,11 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useSignout } from '../../Auth0Provider';
  
-const UserCard = ({ userName, userPicture }) => {
+const UserCard = ({ userName, userImage }) => {
 
   const logout = useSignout();
   const handleLogOut = () => {
-    console.log('asdgasdg');
     logout({
       returnTo: 'http://localhost:7890/stories'
     });
@@ -14,16 +13,16 @@ const UserCard = ({ userName, userPicture }) => {
 
   return (
     <section>
-      <img src={userPicture} alt={userName} />
+      <img src={userImage} alt={userName} />
       <h3>{userName}</h3>
-      <button onClick={handleLogOut}>LOGOUT</button>
+      <button onClick={handleLogOut}>Logout</button>
     </section>
   );
 };
 
 UserCard.propTypes = {
   userName: PropTypes.string.isRequired,
-  userPicture: PropTypes.string.isRequired,
+  userImage: PropTypes.string.isRequired,
   handleUserLogout: PropTypes.func.isRequired
 };
 
