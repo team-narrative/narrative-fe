@@ -6,8 +6,8 @@ import {
 } from 'react-router-dom';
 // import TestContainer from '../containers/TestContainer';
 import { withSession } from '../Auth0Provider';
-// import DefaultView from './DefaultView';
-import UserCard from './sidebar/UserCard';
+// import UserCard from './sidebar/UserCard';
+import DefaultView from './DefaultView';
 // import StoryNavigation from './sidebar/StoryNavigation';
 
 export default function App() {
@@ -15,10 +15,9 @@ export default function App() {
     <>
       <Router>
         <Switch>
-          <Route exact path="/stories" component={withSession(UserCard)} />
+          <Route exact path="/stories" component={withSession(DefaultView)} />
         </Switch>
       </Router>
-
     </>
   );
 }
