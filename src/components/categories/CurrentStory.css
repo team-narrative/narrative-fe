@@ -1,0 +1,9 @@
+.CurrentStory {
+  background-color: grey;
+  display: flex;
+
+  div {
+    background-color: palegoldenrod;
+    width: 50%;
+  }
+}

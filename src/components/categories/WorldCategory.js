@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import AddButton from './AddButton';
 import ViewAllButton from './ViewAllButton';
+import styles from './WorldCategory.css';
 
 const WorldCategory = ({ handleAddWorld, handleViewWorlds }) => {
   return (
-    <section>
+    <section className={styles.WorldCategory}>
       <h2>World Building</h2>
 
       <div>
