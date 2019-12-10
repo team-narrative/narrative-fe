@@ -1,6 +1,7 @@
 let token = null;
 export const setToken = newToken => {
   token = newToken;
+  console.log(token);
 };
 
 const request = (url, method, body) => {

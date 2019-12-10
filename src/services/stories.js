@@ -11,3 +11,4 @@ export const postStory = (storyTitle, storySynopsis) => post(`${STORIES_URL}`,
 export const getAllStories = () => get(`${STORIES_URL}`);
 export const getStoryByStoryId = (storyId) => get(`${STORIES_URL}/${storyId}`);
 export const deleteStoryByStoryId = (storyId) => del(`${STORIES_URL}/${storyId}`);
+  
