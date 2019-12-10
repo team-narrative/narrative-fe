@@ -31,8 +31,8 @@ const CurrentStory = ({ title, synopsis }) => {
 };
 
 CurrentStory.propTypes = {
-  title: PropTypes.string.isRequired,
-  synopsis: PropTypes.string.isRequired
+  title: PropTypes.string,
+  synopsis: PropTypes.string
 };
 
 export default CurrentStory;

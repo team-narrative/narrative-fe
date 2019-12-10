@@ -37,7 +37,7 @@ const DefaultViewModal = ({ handleClose, show }) => {
 
 DefaultViewModal.propTypes = {
   handleClose: PropTypes.func,
-  show: PropTypes.func,
+  show: PropTypes.bool,
   children: PropTypes.string
 };
 
