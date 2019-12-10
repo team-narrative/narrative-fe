@@ -3,11 +3,9 @@ import PropTypes from 'prop-types';
 import { useSignout } from '../../Auth0Provider';
  
 const UserCard = ({ userName, userImage }) => {
-  console.log('User Image', userImage);
 
   const logout = useSignout();
   const handleLogOut = () => {
-    console.log('asdgasdg');
     logout({
       returnTo: 'http://localhost:7890/stories'
     });
