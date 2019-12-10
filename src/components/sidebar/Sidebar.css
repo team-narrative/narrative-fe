@@ -2,4 +2,12 @@
   background-color: pink;
   width: 25%;
   height: 95vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  button {
+    padding: 5px;
+    align-self: center;
+  }
 }
