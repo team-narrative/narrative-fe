@@ -2,13 +2,10 @@ import { post, get, del } from './request';
 
 const STORIES_URL = 'http://localhost:7891/api/v1/stories';
 
-export const postStory = (userId, storyTitle, storySynopsis, storyGenre, storyTags) => post(`${STORIES_URL}`,
+export const postStory = (storyTitle, storySynopsis) => post(`${STORIES_URL}`,
   {
-    userId,
     storyTitle,
-    storySynopsis,
-    storyGenre,
-    storyTags
+    storySynopsis
   });
 
 export const getAllStories = () => get(`${STORIES_URL}`);
