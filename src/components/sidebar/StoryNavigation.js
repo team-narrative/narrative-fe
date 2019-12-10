@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import { fetchStoryById } from '../../actions/storyActions';
+import { getStoryByStoryId } from '../../services/stories';
 // import { createStory } from '../../actions/storyActions';
 
 const StoryNavigation = ({ stories, handleSubmit }) => {
-  console.log('Story Nav', stories[0]);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [storySearch, setStorySearch] = useState('');
 
   // const handleAddStory = (storyTitle, storySynopsis, storyGenre, storyTags) => {
@@ -13,12 +14,23 @@ const StoryNavigation = ({ stories, handleSubmit }) => {
   //   dispatch(createStory(storyTitle, storySynopsis, storyGenre, storyTags));
   // };
 
+  const handleClick = (event) => {
+    event.preventDefault();
+    getStoryByStoryId(String(document.querySelector('input:checked').value))
+      .then(currentStory => {
+        dispatch(fetchStoryById(currentStory._id));
+      });
+  };
+
   // eslint-disable-next-line react/prop-types
-  const storyElements = stories.map((story, i) => {
+  const storyElements = stories.map(story => {
 
     return (
-      <li key={i}>
-        <h3>{story.storyTitle}</h3>
+      <li onClick={handleClick} key={story._id}>
+        <label htmlFor={story._id}>
+          <input type='radio' name='story-title' value={story._id} />
+          {story.storyTitle}
+        </label>
       </li>
     );
   });
