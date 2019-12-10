@@ -3,10 +3,10 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Sidebar from '../components/sidebar/Sidebar';
 import CurrentStory from '../components/categories/CurrentStory';
-// import CharacterCategory from '../components/categories/CharacterCategory';
-// import ChapterCategory from '../components/categories/ChapterCategory';
-// import LocationCategory from '../components/categories/LocationCategory';
-// import WorldCategory from '../components/categories/WorldCategory';
+import CharacterCategory from '../components/categories/CharacterCategory';
+import ChapterCategory from '../components/categories/ChapterCategory';
+import LocationCategory from '../components/categories/LocationCategory';
+import WorldCategory from '../components/categories/WorldCategory';
 import { getStoryList, getUserName, getUserImage, getCurrentStory } from '../selectors/storySelectors';
 import { fetchStoryList } from '../actions/storyActions';
 import DefaultViewModal from './default-view/DefaultView-Modal';
@@ -46,10 +46,10 @@ const Dashboard = () => {
 
       <main>
         <CurrentStory title={currentStoryTitle} synopsis={currentStorySynopsis} />
-        {/* <CharacterCategory />
+        <CharacterCategory />
         <ChapterCategory />
         <LocationCategory />
-        <WorldCategory /> */}
+        <WorldCategory />
       </main>
     </div>
   );
