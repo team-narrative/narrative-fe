@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // import { createStory } from '../../actions/storyActions';
 
 const StoryNavigation = ({ stories, handleSubmit }) => {
-console.log('Story Nav', stories[0]);
+  console.log('Story Nav', stories[0]);
   // const dispatch = useDispatch();
   const [storySearch, setStorySearch] = useState('');
 

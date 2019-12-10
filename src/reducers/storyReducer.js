@@ -4,7 +4,9 @@ const initialState = {
   stories: [],
   currentStory: {},
   loading: true,
-  errors: null
+  errors: null,
+  userName: null,
+  userImage: null
 };
 
 export default function reducer(state = initialState, action) {
@@ -12,7 +14,7 @@ export default function reducer(state = initialState, action) {
     case CREATE_STORY:
       return { ...state, stories: [...state.stories, action.payload] };
     case FETCH_STORY_LIST:
-      return { ...state, stories: action.payload };
+      return { ...state, stories: action.payload, userName: action.payload[0].userName, userImage: action.payload[0].userImage };
     case FETCH_STORY_BY_ID:
       return { ...state, currentStory: action.payload };
     case DESTROY_STORY_BY_ID:

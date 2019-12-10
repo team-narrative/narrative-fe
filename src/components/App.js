@@ -8,6 +8,9 @@ import {
 import { withSession } from '../Auth0Provider';
 // import UserCard from './sidebar/UserCard';
 // import DefaultView from './DefaultView';
+// import Dashboard from '../containers/Dashboard';
+import LoginPage from '../containers/LogInPage';
+// import DefaultVi÷ewModal from './DefaultView-Modal';
 import Dashboard from '../containers/Dashboard';
 // import StoryNavigation from './sidebar/StoryNavigation';
 
@@ -16,7 +19,8 @@ export default function App() {
     <>
       <Router>
         <Switch>
-          <Route exact path="/stories" component={withSession(Dashboard)} />
+          <Route exact path='/' component={LoginPage} />
+          <Route exact path='/stories' component={withSession(Dashboard)} />
         </Switch>
       </Router>
     </>
