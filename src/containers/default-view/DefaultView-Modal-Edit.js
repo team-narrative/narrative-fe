@@ -10,7 +10,6 @@ const DefaultViewModalEdit = ({ handleClose, show }) => {
 
   const dispatch = useDispatch();
   const storyId = useSelector(state => getCurrentStoryId(state));
-  console.log(storyId);
   const [title, setTitle] = useState('');
   const [synopsis, setSynopsis] = useState('');
 
@@ -18,7 +17,6 @@ const DefaultViewModalEdit = ({ handleClose, show }) => {
     event.preventDefault();
     putStoryByStoryId(storyId, title, synopsis)
       .then(updatedStory => {
-        console.log(updatedStory);
         dispatch(updateStoryById(storyId, updatedStory.storyTitle, updatedStory.storySynopsis));
       });
   };
