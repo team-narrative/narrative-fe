@@ -18,7 +18,9 @@ export default function reducer(state = initialState, action) {
     case FETCH_STORY_BY_ID:
       return { ...state, currentStory: action.payload };
     case UPDATE_STORY_BY_ID:
-      return { ...state, stories: [...state.stories] };
+      return { ...state, stories: state.stories.map(story => {
+        return story._id === action.payload._id ? action.payload : story;
+      }) };
     case DESTROY_STORY_BY_ID:
       return { ...state, stories: [...state.stories.slice(0, action.payload)] };
     default:

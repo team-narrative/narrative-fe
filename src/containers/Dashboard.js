@@ -38,10 +38,6 @@ const Dashboard = () => {
       dispatch(fetchStoryList());
   }, [loading, isAuthenticated]);
 
-  useEffect(() => {
-    console.log('heyoo');
-  }, [stories]);
-
   return (
     <div>
       <Sidebar stories={stories} userName={userName} userImage={userImage} />
