@@ -9,7 +9,7 @@ import Sidebar from '../components/sidebar/Sidebar';
 // import WorldCategory from '../components/categories/WorldCategory';
 import { getStoryList, getUserName, getUserImage } from '../selectors/storySelectors';
 import { fetchStoryList } from '../actions/storyActions';
-import DefaultViewModal from '../components/DefaultView-Modal';
+import DefaultViewModal from './DefaultView-Modal';
 
 const Dashboard = () => {
   const stories = useSelector(state => getStoryList(state));
@@ -27,7 +27,6 @@ const Dashboard = () => {
   };
 
   const dispatch = useDispatch();
-  console.log(stories);
   useEffect(() => {
     dispatch(fetchStoryList());
   }, []);

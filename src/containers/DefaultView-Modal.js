@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import styles from './DefaultView-Modal.css';
+import { useDispatch } from 'react-redux';
 import { createStory } from '../actions/storyActions';
+import styles from './DefaultView-Modal.css';
 
 const DefaultViewModal = ({ handleClose, show }) => {
 
@@ -13,6 +13,8 @@ const DefaultViewModal = ({ handleClose, show }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(createStory(title, synopsis));
+    setTitle('');
+    setSynopsis('');
   };
 
   return (
@@ -22,11 +24,11 @@ const DefaultViewModal = ({ handleClose, show }) => {
       <div className={show ? styles.displayBlock : styles.displayNone}>
         <section className={styles.modalMain}>
           <form onSubmit={handleSubmit}>
-            <input placeholder="title" type="text" value={title} onChange={({ target }) => setTitle(target.value)}></input>
-            <input placeholder="synopsis" type="text" value={synopsis} onChange={({ target }) => setSynopsis(target.value)}></input>
-            <button>Save new story</button>
-            <button value='button' onClick={handleClose}>Close</button>
+            <p>Story Title ::</p><input placeholder="title" type="text" value={title} onChange={({ target }) => setTitle(target.value)}></input>
+            <p>Story Synopsis ::</p> <input placeholder="synopsis" type="text" value={synopsis} onChange={({ target }) => setSynopsis(target.value)}></input>
+            <button value='button' onClick={handleClose}>Save new story</button>
           </form>
+          <button onClick={handleClose}>✗</button>
         </section>
       </div>
     </div>
