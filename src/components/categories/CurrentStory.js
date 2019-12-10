@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-// import DefaultView from '../../containers/default-view/DefaultView';
 import DefaultViewModalEdit from '../../containers/default-view/DefaultView-Modal-Edit';
 
 const CurrentStory = ({ title, synopsis }) => {
@@ -19,7 +18,7 @@ const CurrentStory = ({ title, synopsis }) => {
     <section>
       <div>
         <h2>{title}</h2>
-        <DefaultViewModalEdit show={show} handleClose={hideModal} />
+        <DefaultViewModalEdit show={show} hideModal={hideModal} />
         <button type='button' onClick={showModal}>Edit Story</button>
       </div>
 

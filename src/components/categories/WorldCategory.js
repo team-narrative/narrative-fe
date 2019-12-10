@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AddButton from './AddButton';
+import AddWorldButton from './AddWorldButton';
 import ViewAllButton from './ViewAllButton';
 
-const WorldCategory = ({ handleAddWorld, handleViewWorlds }) => {
+const WorldCategory = ({ handleViewWorlds, show, hideModal, showModal }) => {
   return (
     <section>
       <h2>World Building</h2>
 
       <div>
-        <AddButton handleAddClick={handleAddWorld} />
+        <AddWorldButton show={show} hideModal={hideModal} showModal={showModal} />
         <ViewAllButton handleViewClick={handleViewWorlds} />
       </div>
     </section>
@@ -17,8 +17,10 @@ const WorldCategory = ({ handleAddWorld, handleViewWorlds }) => {
 };
 
 WorldCategory.propTypes = {
-  handleAddWorld: PropTypes.func.isRequired,
-  handleViewWorlds: PropTypes.func.isRequired
+  handleViewWorlds: PropTypes.func.isRequired,
+  show: PropTypes.bool,
+  hideModal: PropTypes.func,
+  showModal: PropTypes.func
 };
 
 export default WorldCategory;

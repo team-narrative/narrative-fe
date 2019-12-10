@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-// import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import Sidebar from '../components/sidebar/Sidebar';
 import CurrentStory from '../components/categories/CurrentStory';
@@ -41,15 +40,15 @@ const Dashboard = () => {
   return (
     <div>
       <Sidebar stories={stories} userName={userName} userImage={userImage} />
-      <DefaultViewModal show={show} handleClose={hideModal} />
+      <DefaultViewModal show={show} hideModal={hideModal} />
       <button type='button' onClick={showModal}>Add Story</button>
 
       <main>
         <CurrentStory title={currentStoryTitle} synopsis={currentStorySynopsis} />
-        <CharacterCategory />
-        <ChapterCategory />
-        <LocationCategory />
-        <WorldCategory />
+        <CharacterCategory show={show} hideModal={hideModal} showModal={showModal} />
+        <ChapterCategory show={show} hideModal={hideModal} showModal={showModal} />
+        <LocationCategory show={show} hideModal={hideModal} showModal={showModal} />
+        <WorldCategory show={show} hideModal={hideModal} showModal={showModal} />
       </main>
     </div>
   );
