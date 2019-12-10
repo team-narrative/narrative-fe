@@ -12,7 +12,7 @@ export default function reducer(state = initialState, action) {
     case CREATE_STORY:
       return { ...state, stories: [...state.stories, action.payload] };
     case FETCH_STORY_LIST:
-      return { ...state, stories: [...state.stories, action.payload] };
+      return { ...state, stories: action.payload };
     case FETCH_STORY_BY_ID:
       return { ...state, currentStory: action.payload };
     case DESTROY_STORY_BY_ID:
