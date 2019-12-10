@@ -6,6 +6,15 @@
   top:50%;
   left:50%;
   transform: translate(-50%,-50%);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 30vh;
+
+  p {
+    display: inline;
+    margin-left: 10px;
+  }
 }
 
 .displayBlock {
