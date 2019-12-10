@@ -68,3 +68,9 @@ export default function Auth0Provider({ children, onRedirectCallback = DEFAULT_R
     </Auth0Context.Provider>
   );
 }
+
+export const useSignout = () => {
+  const { auth0Client } = useAuth0();
+  console.log(auth0Client);
+  return () => auth0Client.logout();
+};

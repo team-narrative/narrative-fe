@@ -1,20 +1,32 @@
 import React, { useState } from 'react';
+// import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+// import { createStory } from '../../actions/storyActions';
 
-const StoryNavigation = ({ handleAddStory, stories, handleSubmit }) => {
+const StoryNavigation = ({ stories, handleSubmit }) => {
+console.log('Story Nav', stories[0]);
+  // const dispatch = useDispatch();
   const [storySearch, setStorySearch] = useState('');
 
-  const storyElements = stories.map(story => (
-    <li key={story.title}>
-      <h3>{story.title}</h3>
-    </li>
-  ));
+  // const handleAddStory = (storyTitle, storySynopsis, storyGenre, storyTags) => {
+  //   event.preventDefault();
+  //   dispatch(createStory(storyTitle, storySynopsis, storyGenre, storyTags));
+  // };
+
+  // eslint-disable-next-line react/prop-types
+  const storyElements = stories.map((story, i) => {
+
+    return (
+      <li key={i}>
+        <h3>{story.storyTitle}</h3>
+      </li>
+    );
+  });
 
   return (
     <section>
       <form onSubmit={event => handleSubmit(event, storySearch)}>
-        <button onClick={handleAddStory}>⊕</button>
-
+        {/* <button onClick={handleAddStory} value="button">⊕</button> */}
         <input name="story-search" type="text" placeholder="Search Stories" value={storySearch} onChange={({ target }) => setStorySearch(target.value)} />
 
         <ul>
@@ -26,11 +38,8 @@ const StoryNavigation = ({ handleAddStory, stories, handleSubmit }) => {
 };
 
 StoryNavigation.propTypes = {
-  handleAddStory: PropTypes.func.isRequired,
-  stories: PropTypes.arrayOf(PropTypes.shape({
-    title: PropTypes.string
-  })),
-  handleSubmit: PropTypes.func.isRequired
+  stories: PropTypes.array,
+  handleSubmit: PropTypes.func
 };
 
 export default StoryNavigation;
