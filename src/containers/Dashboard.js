@@ -9,12 +9,14 @@ import Sidebar from '../components/sidebar/Sidebar';
 // import WorldCategory from '../components/categories/WorldCategory';
 import { getStoryList, getUserName, getUserImage } from '../selectors/storySelectors';
 import { fetchStoryList } from '../actions/storyActions';
-import DefaultViewModal from './DefaultView-Modal';
+import DefaultViewModal from './default-view/DefaultView-Modal';
+import { useAuth0 } from '../Auth0Provider';
 
 const Dashboard = () => {
   const stories = useSelector(state => getStoryList(state));
   const userName = useSelector(state => getUserName(state));
   const userImage = useSelector(state => getUserImage(state));
+  const { loading, isAuthenticated } = useAuth0();
 
   const [show, setShow] = useState(false);
 
@@ -28,17 +30,13 @@ const Dashboard = () => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchStoryList());
-  }, []);
+    if(!loading && isAuthenticated) dispatch(fetchStoryList());
+  }, [loading, isAuthenticated]);
 
   return (
     <div>
       <Sidebar stories={stories} userName={userName} userImage={userImage} />
-      <DefaultViewModal show={show} handleClose={hideModal}>
-        {/* <p>Modal</p>
-        <p>Data</p> */}
-      </DefaultViewModal>
-
+      <DefaultViewModal show={show} handleClose={hideModal} />
       <button type='button' onClick={showModal}>Add Story</button>
       
       {/* <main>

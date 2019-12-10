@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { createStory } from '../actions/storyActions';
+import { createStory } from '../../actions/storyActions';
 import styles from './DefaultView-Modal.css';
 
 const DefaultViewModal = ({ handleClose, show }) => {
