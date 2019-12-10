@@ -31,7 +31,7 @@ const Dashboard = () => {
   return (
     <div className={styles.Dashboard}>
       <Sidebar stories={stories} userName={userName} userImage={userImage} />
-      
+
       <main>
         <CurrentStory title={currentStoryTitle} synopsis={currentStorySynopsis} />
 

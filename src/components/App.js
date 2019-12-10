@@ -5,7 +5,7 @@ import {
   Switch
 } from 'react-router-dom';
 // import TestContainer from '../containers/TestContainer';
-import { withSession } from '../Auth0Provider';
+// import { withSession } from '../Auth0Provider';
 // import UserCard from './sidebar/UserCard';
 // import DefaultView from './DefaultView';
 // import Dashboard from '../containers/Dashboard';
@@ -20,7 +20,7 @@ export default function App() {
       <Router>
         <Switch>
           <Route exact path='/' component={LoginPage} />
-          <Route exact path='/stories' component={withSession(Dashboard)} />
+          <Route exact path='/stories' component={Dashboard} />
         </Switch>
       </Router>
     </>
