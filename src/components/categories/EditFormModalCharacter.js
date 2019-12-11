@@ -50,13 +50,12 @@ const EditFormModalCharacter = ({ hideModal, show }) => {
 
   return (
     <div>
-      <p>Create A New Character:</p>
       <div className={show ? styles.displayBlock : styles.displayNone} >
         <section className={styles.modalMain} >
           <form onSubmit={handleSubmit}>
-            Name:<input type="text" value={characterName} onChange={handleChange} />
-            Description:<ReactQuill value={characterDescription} onChange={(value) => setcharacterDescription(value)} formats={formats} modules={modules} />
-            <button value="button" onClick={hideModal}>Submit</button>
+            Name:<input type="text" value={heading} placeholder="Write Name or Title" onChange={({ target }) => setHeading(target.value)} required />
+            Description:<ReactQuill value={description} onChange={(value) => setDescription(value)} formats={formats} modules={modules} />
+            <button id={styles.ModalButton} value="button" onClick={hideModal}>Submit</button>
           </form>
           <button onClick={hideModal}>✗</button>
         </section>

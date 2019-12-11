@@ -11,6 +11,8 @@ import { getStoryList, getUserName, getUserImage, getCurrentStory } from '../sel
 import { fetchStoryList } from '../actions/storyActions';
 import { useSession } from '../Auth0Provider';
 import styles from './Dashboard.css';
+import Footer from '../components/footer/Footer';
+
 
 const Dashboard = () => {
   const stories = useSelector(state => getStoryList(state));
@@ -58,13 +60,14 @@ const Dashboard = () => {
   const hideModal4 = () => {
     setShow4(false);
   };
-  
+
   useEffect(() => {
     if(!loading && isAuthenticated)
       dispatch(fetchStoryList());
   }, [loading, isAuthenticated]);
 
   return (
+
     <div className={styles.Dashboard}>
       <Sidebar stories={stories} userName={userName} userImage={userImage} />
 
@@ -83,6 +86,7 @@ const Dashboard = () => {
         </div>
       </main>
     </div>
+
   );
 };
 

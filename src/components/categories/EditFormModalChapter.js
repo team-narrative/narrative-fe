@@ -36,7 +36,6 @@ const EditFormModalChapter = ({ hideModal, show }) => {
 
   return (
     <div>
-      <p>Create A New Chapter:</p>
       <div className={show ? styles.displayBlock : styles.displayNone} >
         <section className={styles.modalMain}>
           <form onSubmit={handleSubmit}>

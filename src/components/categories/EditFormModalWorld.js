@@ -36,7 +36,6 @@ const EditFormModalWorld = ({ hideModal, show }) => {
 
   return (
     <div>
-      <p>Create A New World:</p>
       <div className={show ? styles.displayBlock : styles.displayNone} >
         <section className={styles.modalMain} >
           <form onSubmit={handleSubmit}>
