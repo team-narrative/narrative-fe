@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-// import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import Sidebar from '../components/sidebar/Sidebar';
 import CurrentStory from '../components/categories/CurrentStory';
@@ -47,10 +46,6 @@ const Dashboard = () => {
       </main>
     </div>
   );
-};
-
-Dashboard.propTypes = {
-
 };
 
 export default Dashboard;
