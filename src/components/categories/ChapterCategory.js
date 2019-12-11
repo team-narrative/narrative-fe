@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ViewAllButton from './ViewAllButton';
+import styles from './ChapterCategory.css';
 import AddChapterButton from './AddChapterButton';
 
 const ChapterCategory = ({ handleViewChapters, show, hideModal, showModal }) => {
   return (
-    <section>
+    <section className={styles.ChapterCategory}>
       <h2>Chapters</h2>
 
       <div>

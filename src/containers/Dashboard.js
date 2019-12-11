@@ -9,6 +9,7 @@ import WorldCategory from '../components/categories/WorldCategory';
 import { getStoryList, getUserName, getUserImage, getCurrentStory } from '../selectors/storySelectors';
 import { fetchStoryList } from '../actions/storyActions';
 import { useAuth0 } from '../Auth0Provider';
+import styles from './Dashboard.css';
 import NewStory from '../components/categories/NewStory';
 
 const Dashboard = () => {
@@ -19,18 +20,8 @@ const Dashboard = () => {
   const dispatch = useDispatch();
   const { loading, isAuthenticated } = useAuth0();
 
-  const [show, setShow] = useState(false);
-
   const currentStoryTitle = currentStory.storyTitle;
   const currentStorySynopsis = currentStory.storySynopsis;
-
-  const showModal = () => {
-    setShow(true);
-  };
-
-  const hideModal = () => {
-    setShow(false);
-  };
 
   useEffect(() => {
     if(!loading && isAuthenticated)
@@ -38,23 +29,25 @@ const Dashboard = () => {
   }, [loading, isAuthenticated]);
 
   return (
-    <div>
+    <div className={styles.Dashboard}>
       <Sidebar stories={stories} userName={userName} userImage={userImage} />
 
       <main>
         <NewStory title={currentStoryTitle} synopsis={currentStorySynopsis} />
         <CurrentStory title={currentStoryTitle} synopsis={currentStorySynopsis} />
-        <CharacterCategory show={show} hideModal={hideModal} showModal={showModal} />
-        <ChapterCategory show={show} hideModal={hideModal} showModal={showModal} />
-        <LocationCategory show={show} hideModal={hideModal} showModal={showModal} />
-        <WorldCategory show={show} hideModal={hideModal} showModal={showModal} />
+    
+        <div className={styles.DashboardContainer}>
+          <CharacterCategory show={show} hideModal={hideModal} showModal={showModal} />
+          <ChapterCategory show={show} hideModal={hideModal} showModal={showModal} />
+        </div>
+
+        <div className={styles.DashboardContainer}>
+          <LocationCategory show={show} hideModal={hideModal} showModal={showModal} />
+          <WorldCategory show={show} hideModal={hideModal} showModal={showModal} />
+        </div>
       </main>
     </div>
   );
-};
-
-Dashboard.propTypes = {
-
 };
 
 export default Dashboard;

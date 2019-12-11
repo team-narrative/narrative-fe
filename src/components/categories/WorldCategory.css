@@ -1,0 +1,25 @@
+.WorldCategory {
+  background-color: aqua;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h2, div {
+    align-self: center;
+  }
+
+  div {
+    width: 85%;
+    height: 40%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  button {
+    height: 90%;
+    align-self: center;
+    width: 45%;
+    font-size: 1em;
+  }
+}
