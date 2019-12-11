@@ -18,7 +18,7 @@ const CurrentStory = ({ title, synopsis }) => {
     <section className={styles.CurrentStory}>
       <div className={styles.CurrentStoryContainer}>
         <h2>{title}</h2>
-        <DefaultViewModalEdit show={show} handleClose={hideModal} />
+        <DefaultViewModalEdit show={show} hideModal={hideModal} />
         <button type='button' onClick={showModal}>Edit Story</button>
       </div>
 
