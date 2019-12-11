@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import App from './components/App';
 import Auth0Provider from './Auth0Provider';
 import store from './store';
+import './reset.css';
 
 render(
   <Auth0Provider
