@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import ReactQuill from 'react-quill';
 import styles from '../../containers/default-view/DefaultView-Modal.css';
+import { createCharacter } from '../../actions/characterActions';
+import { getCurrentStoryId } from '../../selectors/storySelectors';
 
 const EditFormModalCharacter = ({ hideModal, show }) => {
-  const dispatch = useDispatch();
 
-  const [heading, setHeading] = useState('');
-  const [description, setDescription] = useState('');
+  const dispatch = useDispatch();
+  const characterStoryId = useSelector(state => getCurrentStoryId(state));
+
+  const [characterName, setcharacterName] = useState('');
+  const [characterDescription, setcharacterDescription] = useState('');
+  const [redirect, setRedirect] = useState(false);
 
   const formats = [
     'header',
@@ -27,11 +33,19 @@ const EditFormModalCharacter = ({ hideModal, show }) => {
     ],
   };
 
+  if(redirect) return <Redirect to="/characters" />;
+
+  const handleChange = ({ target }) => {
+    console.log(target.value);
+    setcharacterName(target.value);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(createCharacter(heading, description));
-    setHeading('');
-    setDescription('');
+    dispatch(createCharacter(characterStoryId, characterName, characterDescription));
+    setcharacterName('');
+    setcharacterDescription('');
+    setRedirect(true);
   };
 
   return (

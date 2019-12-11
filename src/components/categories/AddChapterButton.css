@@ -1,0 +1,10 @@
+.AddChapterButton {
+
+  button {
+    height: 90%;
+    align-self: center;
+    width: 45%;
+    font-size: 1em;
+  }
+
+}

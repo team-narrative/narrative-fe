@@ -7,7 +7,8 @@ import styles from './WorldCategory.css';
 const WorldCategory = ({ handleViewWorlds, show, hideModal, showModal }) => {
   return (
     <section className={styles.WorldCategory}>
-      <h2>World Building</h2>
+      <h2 className={styles.h2}>World Building</h2>
+
 
       <div className={styles.WorldCategoryContainer}>
         <AddWorldButton show={show} hideModal={hideModal} showModal={showModal} />
