@@ -18,8 +18,8 @@ export default function reducer(state = initialState, action) {
         return character._id === action.payload._id ? action.payload : character;
       }) };
     case DESTROY_CHARACTER_BY_ID:
-      return { ...state, currentStoryCharacters: state.currentStoryCharacters.map((character, i) => {
-        return character._id === action.payload._id ? state.currentStoryCharacters.slice(i, 1) : character;
+      return { ...state, currentStoryCharacters: state.currentStoryCharacters.filter((character) => {
+        return character._id !== action.payload._id;
       }) };
     default:
       return state;
