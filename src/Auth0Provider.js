@@ -38,6 +38,9 @@ export const AuthProvider = ({ children }) => {
           });
         setUser(user);
       }
+      else {
+        setIsAuthenticated(false);
+      }
       setLoading(false);
     });
   });
