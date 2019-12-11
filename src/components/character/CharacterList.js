@@ -1,8 +1,13 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import Character from './Character';
+import { getCharacterList } from '../../selectors/characterSelectors';
 
-const CharacterList = ({ characters }) => {
+const CharacterList = () => {
+
+  const characters = useSelector(state => getCharacterList(state));
+
   let storyCharacters;
   if(characters.length > 0) {
     storyCharacters = characters.map((character, i) => {
