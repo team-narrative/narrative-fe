@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import ReactQuill from 'react-quill';
@@ -10,11 +11,10 @@ const EditFormModalCharacter = ({ hideModal, show }) => {
 
   const dispatch = useDispatch();
   const characterStoryId = useSelector(state => getCurrentStoryId(state));
-  console.log(characterStoryId);
 
   const [characterName, setcharacterName] = useState('');
-  console.log(characterName);
   const [characterDescription, setcharacterDescription] = useState('');
+  const [redirect, setRedirect] = useState(false);
 
   const formats = [
     'header',
@@ -33,6 +33,8 @@ const EditFormModalCharacter = ({ hideModal, show }) => {
     ],
   };
 
+  if(redirect) return <Redirect to="/characters" />;
+
   const handleChange = ({ target }) => {
     console.log(target.value);
     setcharacterName(target.value);
@@ -43,6 +45,7 @@ const EditFormModalCharacter = ({ hideModal, show }) => {
     dispatch(createCharacter(characterStoryId, characterName, characterDescription));
     setcharacterName('');
     setcharacterDescription('');
+    setRedirect(true);
   };
 
   return (
@@ -51,7 +54,6 @@ const EditFormModalCharacter = ({ hideModal, show }) => {
       <div className={show ? styles.displayBlock : styles.displayNone} >
         <section className={styles.modalMain} >
           <form onSubmit={handleSubmit}>
-            <p>{characterName}</p>
             Name:<input type="text" value={characterName} onChange={handleChange} />
             Description:<ReactQuill value={characterDescription} onChange={(value) => setcharacterDescription(value)} formats={formats} modules={modules} />
             <button value="button" onClick={hideModal}>Submit</button>

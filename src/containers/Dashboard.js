@@ -19,16 +19,44 @@ const Dashboard = () => {
   const userImage = useSelector(state => getUserImage(state));
   const dispatch = useDispatch();
   const { loading, isAuthenticated } = useSession();
-  const [show, setShow] = useState(false);
   const currentStoryTitle = currentStory.storyTitle;
   const currentStorySynopsis = currentStory.storySynopsis;
 
-  const showModal = () => {
-    setShow(true);
+  const [show1, setShow1] = useState(false);
+  const [show2, setShow2] = useState(false);
+  const [show3, setShow3] = useState(false);
+  const [show4, setShow4] = useState(false);
+
+  const showModal1 = () => {
+    setShow1(true);
   };
 
-  const hideModal = () => {
-    setShow(false);
+  const hideModal1 = () => {
+    setShow1(false);
+  };
+
+  const showModal2 = () => {
+    setShow2(true);
+  };
+
+  const hideModal2 = () => {
+    setShow2(false);
+  };
+
+  const showModal3 = () => {
+    setShow3(true);
+  };
+
+  const hideModal3 = () => {
+    setShow3(false);
+  };
+
+  const showModal4 = () => {
+    setShow4(true);
+  };
+
+  const hideModal4 = () => {
+    setShow4(false);
   };
   
   useEffect(() => {
@@ -45,13 +73,13 @@ const Dashboard = () => {
         <CurrentStory title={currentStoryTitle} synopsis={currentStorySynopsis} />
     
         <div className={styles.DashboardContainer}>
-          <CharacterCategory show={show} hideModal={hideModal} showModal={showModal} />
-          <ChapterCategory show={show} hideModal={hideModal} showModal={showModal} />
+          <CharacterCategory show={show1} hideModal={hideModal1} showModal={showModal1} />
+          <ChapterCategory show={show2} hideModal={hideModal2} showModal={showModal2} />
         </div>
 
         <div className={styles.DashboardContainer}>
-          <LocationCategory show={show} hideModal={hideModal} showModal={showModal} />
-          <WorldCategory show={show} hideModal={hideModal} showModal={showModal} />
+          <LocationCategory show={show3} hideModal={hideModal3} showModal={showModal3} />
+          <WorldCategory show={show4} hideModal={hideModal4} showModal={showModal4} />
         </div>
       </main>
     </div>
