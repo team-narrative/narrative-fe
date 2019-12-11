@@ -10,15 +10,15 @@ export const createCharacter = (characterStoryId, characterName, characterDescri
       }));
 };
 
-export const FETCH_CHARACTER_LIST = 'FETCH_CHARACTER_LIST';
-export const fetchCharacterList = () => dispatch => {
-  getAllCharacters()
-    .then(allCharacters => 
-      dispatch({
-        type: FETCH_CHARACTER_LIST,
-        payload: allCharacters
-      }));
-};
+// export const FETCH_CHARACTER_LIST = 'FETCH_CHARACTER_LIST';
+// export const fetchCharacterList = () => dispatch => {
+//   getAllCharacters()
+//     .then(allCharacters => 
+//       dispatch({
+//         type: FETCH_CHARACTER_LIST,
+//         payload: allCharacters
+//       }));
+// };
 
 export const FETCH_CHARACTERS_BY_STORY_ID = 'FETCH_CHARACTERS_BY_STORY_ID';
 export const fetchCharactersByStoryId = (characterStoryId) => dispatch => {
