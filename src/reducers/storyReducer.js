@@ -1,4 +1,4 @@
-import { CREATE_STORY, FETCH_STORY_BY_ID, FETCH_STORY_LIST, DESTROY_STORY_BY_ID } from '../actions/storyActions';
+import { CREATE_STORY, FETCH_STORY_BY_ID, FETCH_STORY_LIST, DESTROY_STORY_BY_ID, UPDATE_STORY_BY_ID } from '../actions/storyActions';
 
 const initialState = {
   stories: [],
@@ -17,9 +17,14 @@ export default function reducer(state = initialState, action) {
       return { ...state, stories: action.payload, userName: action.payload[0].userName, userImage: action.payload[0].userImage };
     case FETCH_STORY_BY_ID:
       return { ...state, currentStory: action.payload };
+    case UPDATE_STORY_BY_ID:
+      return { ...state, stories: state.stories.map(story => {
+        return story._id === action.payload._id ? action.payload : story;
+      }) };
     case DESTROY_STORY_BY_ID:
       return { ...state, stories: [...state.stories.slice(0, action.payload)] };
     default:
       return state;
   }
 }
+

@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AddButton from './AddButton';
 import ViewAllButton from './ViewAllButton';
+import AddChapterButton from './AddChapterButton';
 
-const ChapterCategory = ({ handleAddChapter, handleViewChapters }) => {
+const ChapterCategory = ({ handleViewChapters, show, hideModal, showModal }) => {
   return (
     <section>
       <h2>Chapters</h2>
 
       <div>
-        <AddButton handleAddClick={handleAddChapter} />
+        <AddChapterButton show={show} hideModal={hideModal} showModal={showModal} />
         <ViewAllButton handleViewClick={handleViewChapters} />
       </div>
     </section>
@@ -17,8 +17,10 @@ const ChapterCategory = ({ handleAddChapter, handleViewChapters }) => {
 };
 
 ChapterCategory.propTypes = {
-  handleAddChapter: PropTypes.func.isRequired,
-  handleViewChapters: PropTypes.func.isRequired
+  handleViewChapters: PropTypes.func.isRequired,
+  show: PropTypes.bool,
+  hideModal: PropTypes.func,
+  showModal: PropTypes.func
 };
 
 export default ChapterCategory;
