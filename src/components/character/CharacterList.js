@@ -1,23 +1,26 @@
 import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import Character from './Character';
-import { getCharacterList } from '../../selectors/characterSelectors';
+import { getCurrentStoryId } from '../../selectors/storySelectors';
+import { fetchCharactersByStoryId } from '../../actions/characterActions';
+import { getCurrentStoryCharacters } from '../../selectors/characterSelectors';
 
 const CharacterList = () => {
+  const storyId = useSelector(state => getCurrentStoryId(state));
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchCharactersByStoryId(storyId));
+  }, []);
 
-  // Need to somehow get the selected story's id
-  // Need to then fetch all characters associated with that current story based on id
-  // Feed this character array into the map below. 
-
-  const characters = useSelector(state => getCharacterList(state));
+  const characters = useSelector(state => getCurrentStoryCharacters(state));
 
   let storyCharacters;
   if(characters.length > 0) {
     storyCharacters = characters.map((character, i) => {
       return (
         <li key={character._id || i}>
-          <Character currentName={character.characterName} currentDescription={character.characterDescription}/>
+          <Character characterId={character._id} currentName={character.characterName} currentDescription={character.characterDescription} />
         </li>
       );
     });
