@@ -16,14 +16,14 @@ const CurrentStory = ({ title, synopsis }) => {
 
   return (
     <section className={styles.CurrentStory}>
-      <div>
-        <h2>{title}lorem</h2>
+      <div className={styles.CurrentStoryContainer}>
+        <h2>{title}</h2>
         <DefaultViewModalEdit show={show} handleClose={hideModal} />
         <button type='button' onClick={showModal}>Edit Story</button>
       </div>
 
-      <div>
-        <p>{synopsis}lorem</p>
+      <div className={styles.SynopsisContainer}>
+        <p>{synopsis}</p>
       </div>
     </section>
   );
