@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ViewAllButton from './ViewAllButton';
+import styles from './CharacterCategory.css';
 import AddCharacterButton from './AddCharacterButton';
 
 const CharacterCategory = ({ handleViewCharacters, show, hideModal, showModal }) => {
   return (
-    <section>
+    <section className={styles.CharacterCategory}>
       <h2>Characters</h2>
 
       <div>

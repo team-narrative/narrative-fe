@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import AddLocationButton from './AddLocationButton';
 import ViewAllButton from './ViewAllButton';
+import styles from './LocationCategory.css';
 
 const LocationCategory = ({ handleViewLocations, show, hideModal, showModal }) => {
   return (
-    <section>
+    <section className={styles.LocationCategory}>
       <h2>Locations</h2>
 
       <div>
