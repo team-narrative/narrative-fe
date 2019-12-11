@@ -1,0 +1,21 @@
+.CharacterCategory {
+  background-color: yellow;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+.div {
+  align-self: center;
+  width: 85%;
+  height: 40%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.h2 {
+  align-self: center;
+
+}

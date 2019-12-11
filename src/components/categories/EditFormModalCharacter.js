@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import ReactQuill from 'react-quill';
 import styles from '../../containers/default-view/DefaultView-Modal.css';
+import { createCharacter } from '../../actions/characterActions';
+import { getCurrentStoryId } from '../../selectors/storySelectors';
 
 const EditFormModalCharacter = ({ hideModal, show }) => {
-  const dispatch = useDispatch();
 
-  const [heading, setHeading] = useState('');
-  const [description, setDescription] = useState('');
+  const dispatch = useDispatch();
+  const characterStoryId = useSelector(state => getCurrentStoryId(state));
+  console.log(characterStoryId);
+
+  const [characterName, setcharacterName] = useState('');
+  console.log(characterName);
+  const [characterDescription, setcharacterDescription] = useState('');
 
   const formats = [
     'header',
@@ -27,11 +33,16 @@ const EditFormModalCharacter = ({ hideModal, show }) => {
     ],
   };
 
+  const handleChange = ({ target }) => {
+    console.log(target.value);
+    setcharacterName(target.value);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(createCharacter(heading, description));
-    setHeading('');
-    setDescription('');
+    dispatch(createCharacter(characterStoryId, characterName, characterDescription));
+    setcharacterName('');
+    setcharacterDescription('');
   };
 
   return (
@@ -40,8 +51,9 @@ const EditFormModalCharacter = ({ hideModal, show }) => {
       <div className={show ? styles.displayBlock : styles.displayNone} >
         <section className={styles.modalMain} >
           <form onSubmit={handleSubmit}>
-            Name:<input type="text" value={heading} placeholder="Write Name or Title" onChange={({ target }) => setHeading(target.value)} required />
-            Description:<ReactQuill value={description} onChange={(value) => setDescription(value)} formats={formats} modules={modules} />
+            <p>{characterName}</p>
+            Name:<input type="text" value={characterName} onChange={handleChange} />
+            Description:<ReactQuill value={characterDescription} onChange={(value) => setcharacterDescription(value)} formats={formats} modules={modules} />
             <button value="button" onClick={hideModal}>Submit</button>
           </form>
           <button onClick={hideModal}>✗</button>

@@ -7,9 +7,9 @@ import AddChapterButton from './AddChapterButton';
 const ChapterCategory = ({ handleViewChapters, show, hideModal, showModal }) => {
   return (
     <section className={styles.ChapterCategory}>
-      <h2>Chapters</h2>
+      <h2 className={styles.h2}>Chapters</h2>
 
-      <div>
+      <div className={styles.div}>
         <AddChapterButton show={show} hideModal={hideModal} showModal={showModal} />
         <ViewAllButton handleViewClick={handleViewChapters} />
       </div>
