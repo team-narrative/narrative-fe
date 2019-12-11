@@ -19,10 +19,18 @@ const Dashboard = () => {
   const userImage = useSelector(state => getUserImage(state));
   const dispatch = useDispatch();
   const { loading, isAuthenticated } = useAuth0();
-
+  const [show, setShow] = useState(false);
   const currentStoryTitle = currentStory.storyTitle;
   const currentStorySynopsis = currentStory.storySynopsis;
 
+  const showModal = () => {
+    setShow(true);
+  };
+
+  const hideModal = () => {
+    setShow(false);
+  };
+  
   useEffect(() => {
     if(!loading && isAuthenticated)
       dispatch(fetchStoryList());
