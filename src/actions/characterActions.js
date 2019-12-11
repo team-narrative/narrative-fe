@@ -1,4 +1,4 @@
-import { postCharactersByStoryId, getCharactersByStoryId } from '../services/characters';
+import { postCharactersByStoryId, getCharactersByStoryId, getAllCharacters } from '../services/characters';
 
 export const CREATE_CHARACTER = 'CREATE_CHARACTER';
 export const createCharacter = (characterStoryId, characterName, characterDescription, characterTags) => dispatch => {
@@ -7,6 +7,16 @@ export const createCharacter = (characterStoryId, characterName, characterDescri
       dispatch({
         type: CREATE_CHARACTER,
         payload: newCharacter
+      }));
+};
+
+export const FETCH_CHARACTER_LIST = 'FETCH_CHARACTER_LIST';
+export const fetchCharacterList = () => dispatch => {
+  getAllCharacters()
+    .then(allCharacters => 
+      dispatch({
+        type: FETCH_CHARACTER_LIST,
+        payload: allCharacters
       }));
 };
 
