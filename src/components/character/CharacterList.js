@@ -7,8 +7,6 @@ import { fetchCharactersByStoryId } from '../../actions/characterActions';
 import { getCurrentStoryCharacters } from '../../selectors/characterSelectors';
 
 const CharacterList = () => {
-
-  console.log('Story ID', storyId);
   const storyId = useSelector(state => getCurrentStoryId(state));
   const dispatch = useDispatch();
   useEffect(() => {
@@ -16,15 +14,13 @@ const CharacterList = () => {
   }, []);
 
   const characters = useSelector(state => getCurrentStoryCharacters(state));
-  console.log('Characters', characters);
-
 
   let storyCharacters;
   if(characters.length > 0) {
     storyCharacters = characters.map((character, i) => {
       return (
         <li key={character._id || i}>
-          <Character currentName={character.characterName} currentDescription={character.characterDescription} />
+          <Character characterId={character._id} currentName={character.characterName} currentDescription={character.characterDescription} />
         </li>
       );
     });

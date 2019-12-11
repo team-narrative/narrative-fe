@@ -1,7 +1,6 @@
-import { CREATE_CHARACTER, FETCH_CHARACTERS_BY_STORY_ID } from '../actions/characterActions';
+import { CREATE_CHARACTER, FETCH_CHARACTERS_BY_STORY_ID, EDIT_CHARACTER_BY_CHARACTER_ID, DESTROY_CHARACTER_BY_ID } from '../actions/characterActions';
 
 const initialState = {
-  characters: [],
   currentCharacterStory: '',
   currentStoryCharacters: []
 };
@@ -14,6 +13,14 @@ export default function reducer(state = initialState, action) {
     // Characters by story
     case FETCH_CHARACTERS_BY_STORY_ID:
       return { ...state, currentStoryCharacters: action.payload };
+    case EDIT_CHARACTER_BY_CHARACTER_ID:
+      return { ...state, currentStoryCharacters: state.currentStoryCharacters.map(character => {
+        return character._id === action.payload._id ? action.payload : character;
+      }) };
+    case DESTROY_CHARACTER_BY_ID:
+      return { ...state, currentStoryCharacters: state.currentStoryCharacters.map((character, i) => {
+        return character._id === action.payload._id ? state.currentStoryCharacters.slice(i, 1) : character;
+      }) };
     default:
       return state;
   }
