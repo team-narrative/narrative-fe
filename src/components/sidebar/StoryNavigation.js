@@ -17,8 +17,18 @@ const StoryNavigation = ({ stories, handleSubmit }) => {
   };
 
   // eslint-disable-next-line react/prop-types
-  const storyElements = stories.map(story => {
-
+  const storyElements = stories.map((story) => {
+    // if(i === 0) {
+    //   return (
+    //     <li onClick={handleClick} key={story._id}>
+    //       <label htmlFor={story._id}>
+    //         <input type='radio' name='story-title' value={story._id} />
+    //         {story.storyTitle}
+    //       </label>
+    //     </li>
+    //   );
+    // }
+    // else {
     return (
       <li onClick={handleClick} key={story._id}>
         <label htmlFor={story._id}>
@@ -27,6 +37,7 @@ const StoryNavigation = ({ stories, handleSubmit }) => {
         </label>
       </li>
     );
+    // }
   });
 
   return (

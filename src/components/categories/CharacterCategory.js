@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ViewAllButton from './ViewAllButton';
 import styles from './CharacterCategory.css';
 import AddCharacterButton from './AddCharacterButton';
 
-const CharacterCategory = ({ handleViewCharacters, show, hideModal, showModal }) => {
+const CharacterCategory = ({ show, hideModal, showModal }) => {
+  const [redirect, setRedirect] = useState(false);
+
+  if(redirect) return <Redirect to="/characters" />;
+  const handleViewCharacters = () => {
+    setRedirect(true);
+  };
+
   return (
     <section className={styles.CharacterCategory}>
       <h2 className={styles.h2}>Characters</h2>
@@ -19,7 +27,6 @@ const CharacterCategory = ({ handleViewCharacters, show, hideModal, showModal })
 };
 
 CharacterCategory.propTypes = {
-  handleViewCharacters: PropTypes.func.isRequired,
   show: PropTypes.bool,
   hideModal: PropTypes.func,
   showModal: PropTypes.func
