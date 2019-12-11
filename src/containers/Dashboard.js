@@ -8,8 +8,8 @@ import LocationCategory from '../components/categories/LocationCategory';
 import WorldCategory from '../components/categories/WorldCategory';
 import { getStoryList, getUserName, getUserImage, getCurrentStory } from '../selectors/storySelectors';
 import { fetchStoryList } from '../actions/storyActions';
-import DefaultViewModal from './default-view/DefaultView-Modal';
 import { useAuth0 } from '../Auth0Provider';
+import NewStory from '../components/categories/NewStory';
 
 const Dashboard = () => {
   const stories = useSelector(state => getStoryList(state));
@@ -40,10 +40,9 @@ const Dashboard = () => {
   return (
     <div>
       <Sidebar stories={stories} userName={userName} userImage={userImage} />
-      <DefaultViewModal show={show} hideModal={hideModal} />
-      <button type='button' onClick={showModal}>Add Story</button>
 
       <main>
+        <NewStory title={currentStoryTitle} synopsis={currentStorySynopsis} />
         <CurrentStory title={currentStoryTitle} synopsis={currentStorySynopsis} />
         <CharacterCategory show={show} hideModal={hideModal} showModal={showModal} />
         <ChapterCategory show={show} hideModal={hideModal} showModal={showModal} />
