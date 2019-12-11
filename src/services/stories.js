@@ -1,4 +1,4 @@
-import { post, get, del } from './request';
+import { post, get, put, del } from './request';
 
 const STORIES_URL = 'http://localhost:7891/api/v1/stories';
 
@@ -10,5 +10,9 @@ export const postStory = (storyTitle, storySynopsis) => post(`${STORIES_URL}`,
 
 export const getAllStories = () => get(`${STORIES_URL}`);
 export const getStoryByStoryId = (storyId) => get(`${STORIES_URL}/${storyId}`);
+export const putStoryByStoryId = (storyId, storyTitle, storySynopsis) => put(`${STORIES_URL}/${storyId}`,
+  {
+    storyTitle,
+    storySynopsis
+  });
 export const deleteStoryByStoryId = (storyId) => del(`${STORIES_URL}/${storyId}`);
-  

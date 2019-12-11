@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useSignout } from '../../Auth0Provider';
- 
-const UserCard = ({ userName, userImage }) => {
+import styles from './UserCard.css';
 
+const UserCard = ({ userName, userImage }) => {
   const logout = useSignout();
   const handleLogOut = () => {
     logout({
@@ -12,7 +12,7 @@ const UserCard = ({ userName, userImage }) => {
   };
 
   return (
-    <section>
+    <section className={styles.UserCard}>
       <img src={userImage} alt={userName} />
       <h3>{userName}</h3>
       <button onClick={handleLogOut}>Logout</button>
@@ -22,8 +22,7 @@ const UserCard = ({ userName, userImage }) => {
 
 UserCard.propTypes = {
   userName: PropTypes.string.isRequired,
-  userImage: PropTypes.string.isRequired,
-  handleUserLogout: PropTypes.func.isRequired
+  userImage: PropTypes.string.isRequired
 };
 
 export default UserCard;

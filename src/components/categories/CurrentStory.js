@@ -1,15 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import DefaultViewModalEdit from '../../containers/default-view/DefaultView-Modal-Edit';
+import styles from './CurrentStory.css';
 
-const CurrentStory = ({ title, synopsis, handleEditClick }) => {
+const CurrentStory = ({ title, synopsis }) => {
+  const [show, setShow] = useState(false);
+
+  const showModal = () => {
+    setShow(true);
+  };
+
+  const hideModal = () => {
+    setShow(false);
+  };
+
   return (
-    <section>
-      <div>
+    <section className={styles.CurrentStory}>
+      <div className={styles.CurrentStoryContainer}>
         <h2>{title}</h2>
-        <button onClick={handleEditClick}>Edit</button>
+        <DefaultViewModalEdit show={show} hideModal={hideModal} />
+        <button type='button' onClick={showModal}>Edit Story</button>
       </div>
 
-      <div>
+      <div className={styles.SynopsisContainer}>
         <p>{synopsis}</p>
       </div>
     </section>
@@ -17,9 +30,8 @@ const CurrentStory = ({ title, synopsis, handleEditClick }) => {
 };
 
 CurrentStory.propTypes = {
-  title: PropTypes.string.isRequired,
-  handleEditClick: PropTypes.func.isRequired,
-  synopsis: PropTypes.string.isRequired
+  title: PropTypes.string,
+  synopsis: PropTypes.string
 };
 
 export default CurrentStory;
