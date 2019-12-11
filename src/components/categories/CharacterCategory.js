@@ -7,7 +7,8 @@ import AddCharacterButton from './AddCharacterButton';
 const CharacterCategory = ({ handleViewCharacters, show, hideModal, showModal }) => {
   return (
     <section className={styles.CharacterCategory}>
-      <h2>Characters</h2>
+      <h2 className={styles.h2}>Characters</h2>
+
 
       <div className={styles.CharacterCategoryContainer}>
         <AddCharacterButton show={show} hideModal={hideModal} showModal={showModal} />

@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useSignout } from '../../Auth0Provider';
+import { useLogout } from '../../Auth0Provider';
 import styles from './UserCard.css';
 
 const UserCard = ({ userName, userImage }) => {
-  const logout = useSignout();
+  const logout = useLogout();
   const handleLogOut = () => {
     logout({
       returnTo: 'http://localhost:7890/stories'
