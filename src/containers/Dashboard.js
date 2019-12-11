@@ -85,6 +85,7 @@ const Dashboard = () => {
           <WorldCategory show={show4} hideModal={hideModal4} showModal={showModal4} />
         </div>
       </main>
+      <Footer />
     </div>
 
   );
