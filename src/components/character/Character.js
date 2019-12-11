@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import ReactQuill from 'react-quill';
 import styles from './Character.css';
 import arrow from '../../assets/arrow.png';
+import { editCharacterByCharacterId, destroyCharacterById } from '../../actions/characterActions';
 
-const Character = ({ handleSubmit, currentName, currentDescription }) => {
+const Character = ({ characterId, currentName, currentDescription }) => {
   const [name, setName] = useState(currentName);
   const [description, setDescription] = useState(currentDescription);
   const [hidden, setHidden] = useState(true);
+  const dispatch = useDispatch();
 
   const formats = [
     'header',
@@ -27,8 +30,13 @@ const Character = ({ handleSubmit, currentName, currentDescription }) => {
   };
 
   const onSubmit = event => {
-    event.preventDefault;
-    handleSubmit(name, description);
+    event.preventDefault();
+    dispatch(editCharacterByCharacterId(characterId, name, description));
+  };
+
+  const handleDelete = event => {
+    event.preventDefault();
+    dispatch(destroyCharacterById(characterId));
   };
 
   const toggle = () => {
@@ -42,13 +50,15 @@ const Character = ({ handleSubmit, currentName, currentDescription }) => {
         <input type="text" value={name} onChange={({ target }) => setName(target.value)} required />
         <ReactQuill value={description} onChange={(value) => setDescription(value)} formats={formats} modules={modules} />
         <button>DONE</button>
-      </form>}
+        <button onClick={handleDelete} value="button">DELETE</button>
+      </form>
+      }
     </div>
   );
 };
 
 Character.propTypes = {
-  handleSubmit: PropTypes.func,
+  characterId: PropTypes.string,
   currentName: PropTypes.string,
   currentDescription: PropTypes.string
 };
