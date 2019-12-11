@@ -1,0 +1,25 @@
+.CharacterCategory {
+  background-color: yellow;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h2, div {
+    align-self: center;
+  }
+
+  button {
+    height: 90%;
+    align-self: center;
+    width: 45%;
+    font-size: 1em;
+  }
+}
+
+.CharacterCategoryContainer {
+  width: 85%;
+  height: 40%;
+  display: flex;
+  justify-content: space-between;
+}

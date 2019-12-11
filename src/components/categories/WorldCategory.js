@@ -9,7 +9,7 @@ const WorldCategory = ({ handleViewWorlds, show, hideModal, showModal }) => {
     <section className={styles.WorldCategory}>
       <h2>World Building</h2>
 
-      <div>
+      <div className={styles.WorldCategoryContainer}>
         <AddWorldButton show={show} hideModal={hideModal} showModal={showModal} />
         <ViewAllButton handleViewClick={handleViewWorlds} />
       </div>
