@@ -6,11 +6,11 @@ import CharacterCategory from '../components/categories/CharacterCategory';
 import ChapterCategory from '../components/categories/ChapterCategory';
 import LocationCategory from '../components/categories/LocationCategory';
 import WorldCategory from '../components/categories/WorldCategory';
+import NewStory from '../components/categories/NewStory';
 import { getStoryList, getUserName, getUserImage, getCurrentStory } from '../selectors/storySelectors';
 import { fetchStoryList } from '../actions/storyActions';
-import { useAuth0 } from '../Auth0Provider';
+import { useSession } from '../Auth0Provider';
 import styles from './Dashboard.css';
-import NewStory from '../components/categories/NewStory';
 
 const Dashboard = () => {
   const stories = useSelector(state => getStoryList(state));
@@ -18,7 +18,7 @@ const Dashboard = () => {
   const userName = useSelector(state => getUserName(state));
   const userImage = useSelector(state => getUserImage(state));
   const dispatch = useDispatch();
-  const { loading, isAuthenticated } = useAuth0();
+  const { loading, isAuthenticated } = useSession();
   const [show, setShow] = useState(false);
   const currentStoryTitle = currentStory.storyTitle;
   const currentStorySynopsis = currentStory.storySynopsis;

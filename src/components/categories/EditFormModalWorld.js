@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import ReactQuill from 'react-quill';
 import styles from '../../containers/default-view/DefaultView-Modal.css';
 
 const EditFormModalWorld = ({ hideModal, show }) => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const [heading, setHeading] = useState('');
   const [description, setDescription] = useState('');
@@ -29,7 +29,7 @@ const EditFormModalWorld = ({ hideModal, show }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(createWorld(heading, description));
+    // dispatch(createWorld(heading, description));
     setHeading('');
     setDescription('');
   };

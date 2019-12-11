@@ -7,9 +7,9 @@ import styles from './LocationCategory.css';
 const LocationCategory = ({ handleViewLocations, show, hideModal, showModal }) => {
   return (
     <section className={styles.LocationCategory}>
-      <h2>Locations</h2>
+      <h2 className={styles.h2}>Locations</h2>
 
-      <div>
+      <div className={styles.div}>
         <AddLocationButton show={show} hideModal={hideModal} showModal={showModal} />
         <ViewAllButton handleViewClick={handleViewLocations} />
       </div>
