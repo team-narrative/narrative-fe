@@ -11,6 +11,7 @@ import { fetchStoryList } from '../actions/storyActions';
 import { useAuth0 } from '../Auth0Provider';
 import styles from './Dashboard.css';
 import NewStory from '../components/categories/NewStory';
+import Footer from '../components/footer/Footer';
 
 const Dashboard = () => {
   const stories = useSelector(state => getStoryList(state));
@@ -30,31 +31,34 @@ const Dashboard = () => {
   const hideModal = () => {
     setShow(false);
   };
-  
+
   useEffect(() => {
     if(!loading && isAuthenticated)
       dispatch(fetchStoryList());
   }, [loading, isAuthenticated]);
 
   return (
-    <div className={styles.Dashboard}>
-      <Sidebar stories={stories} userName={userName} userImage={userImage} />
+    <>
+      <div className={styles.Dashboard}>
+        <Sidebar stories={stories} userName={userName} userImage={userImage} />
 
-      <main>
-        <NewStory title={currentStoryTitle} synopsis={currentStorySynopsis} />
-        <CurrentStory title={currentStoryTitle} synopsis={currentStorySynopsis} />
-    
-        <div className={styles.DashboardContainer}>
-          <CharacterCategory show={show} hideModal={hideModal} showModal={showModal} />
-          <ChapterCategory show={show} hideModal={hideModal} showModal={showModal} />
-        </div>
+        <main>
+          <NewStory title={currentStoryTitle} synopsis={currentStorySynopsis} />
+          <CurrentStory title={currentStoryTitle} synopsis={currentStorySynopsis} />
 
-        <div className={styles.DashboardContainer}>
-          <LocationCategory show={show} hideModal={hideModal} showModal={showModal} />
-          <WorldCategory show={show} hideModal={hideModal} showModal={showModal} />
-        </div>
-      </main>
-    </div>
+          <div className={styles.DashboardContainer}>
+            <CharacterCategory show={show} hideModal={hideModal} showModal={showModal} />
+            <ChapterCategory show={show} hideModal={hideModal} showModal={showModal} />
+          </div>
+
+          <div className={styles.DashboardContainer}>
+            <LocationCategory show={show} hideModal={hideModal} showModal={showModal} />
+            <WorldCategory show={show} hideModal={hideModal} showModal={showModal} />
+          </div>
+        </main>
+      </div>
+      <Footer />
+    </>
   );
 };
 
