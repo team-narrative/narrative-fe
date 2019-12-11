@@ -36,7 +36,6 @@ const EditFormModalCharacter = ({ hideModal, show }) => {
 
   return (
     <div>
-      <p>Create A New Character:</p>
       <div className={show ? styles.displayBlock : styles.displayNone} >
         <section className={styles.modalMain} >
           <form onSubmit={handleSubmit}>
