@@ -8,13 +8,6 @@
   h2, div {
     align-self: center;
   }
-
-  button {
-    height: 90%;
-    align-self: center;
-    width: 45%;
-    font-size: 1em;
-  }
 }
 
 .LocationCategoryContainer {
