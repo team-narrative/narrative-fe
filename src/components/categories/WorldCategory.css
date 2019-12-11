@@ -1,19 +1,18 @@
 .WorldCategory {
-  background-color: #ccc;
+  background-color: aqua;
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  h2, div {
+    align-self: center;
+  }
 }
 
-.h2 {
-  align-self: center;
-}
-
-.div {
+.WorldCategoryContainer {
   width: 85%;
   height: 40%;
   display: flex;
   justify-content: space-between;
-
 }

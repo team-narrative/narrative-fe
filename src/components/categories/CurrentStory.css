@@ -5,16 +5,11 @@
 }
 
 .CurrentStoryContainer {
-  background-color: red;
+  background-color: lightblue;
   width: 30%;
   display: flex;
   flex-direction: column;
   text-align: center;
-
-  button {
-    width: 100px;
-    align-self: center;
-  }
 }
 
 .SynopsisContainer {

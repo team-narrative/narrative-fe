@@ -8,8 +8,7 @@ const LocationCategory = ({ handleViewLocations, show, hideModal, showModal }) =
   return (
     <section className={styles.LocationCategory}>
       <h2 className={styles.h2}>Locations</h2>
-
-      <div className={styles.div}>
+      <div className={styles.LocationCategoryContainer}>
         <AddLocationButton show={show} hideModal={hideModal} showModal={showModal} />
         <ViewAllButton handleViewClick={handleViewLocations} />
       </div>

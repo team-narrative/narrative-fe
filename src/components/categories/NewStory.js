@@ -17,7 +17,6 @@ const NewStory = () => {
   return (
     <section>
       <div>
-        <h2>Create New Story</h2>
         <DefaultViewModal show={show} hideModal={hideModal} />
         <button type='button' onClick={showModal}>New Story</button>
       </div>

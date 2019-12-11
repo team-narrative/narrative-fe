@@ -9,7 +9,8 @@ const ChapterCategory = ({ handleViewChapters, show, hideModal, showModal }) => 
     <section className={styles.ChapterCategory}>
       <h2 className={styles.h2}>Chapters</h2>
 
-      <div className={styles.div}>
+
+      <div className={styles.ChapterCategoryContainer}>
         <AddChapterButton show={show} hideModal={hideModal} showModal={showModal} />
         <ViewAllButton handleViewClick={handleViewChapters} />
       </div>

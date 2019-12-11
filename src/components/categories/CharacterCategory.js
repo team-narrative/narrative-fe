@@ -9,7 +9,8 @@ const CharacterCategory = ({ handleViewCharacters, show, hideModal, showModal })
     <section className={styles.CharacterCategory}>
       <h2 className={styles.h2}>Characters</h2>
 
-      <div className={styles.div}>
+
+      <div className={styles.CharacterCategoryContainer}>
         <AddCharacterButton show={show} hideModal={hideModal} showModal={showModal} />
         <ViewAllButton handleViewClick={handleViewCharacters} />
       </div>
