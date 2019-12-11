@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { createStory } from '../../actions/storyActions';
 import styles from './DefaultView-Modal.css';
 
-const DefaultViewModal = ({ handleClose, show }) => {
+const DefaultViewModal = ({ hideModal, show }) => {
 
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
@@ -24,11 +24,11 @@ const DefaultViewModal = ({ handleClose, show }) => {
       <div className={show ? styles.displayBlock : styles.displayNone}>
         <section className={styles.modalMain}>
           <form onSubmit={handleSubmit}>
-            <p>Story Title ::</p><input placeholder="title" type="text" value={title} onChange={({ target }) => setTitle(target.value)}></input>
-            <p>Story Synopsis ::</p> <input placeholder="synopsis" type="text" value={synopsis} onChange={({ target }) => setSynopsis(target.value)}></input>
-            <button value='button' onClick={handleClose}>Save new story</button>
+            Story Title ::<input placeholder="title" type="text" value={title} onChange={({ target }) => setTitle(target.value)}></input>
+            Story Synopsis :: <input placeholder="synopsis" type="text" value={synopsis} onChange={({ target }) => setSynopsis(target.value)}></input>
+            <button value='button' onClick={hideModal}>Save new story</button>
           </form>
-          <button onClick={handleClose}>✗</button>
+          <button onClick={hideModal}>✗</button>
         </section>
       </div>
     </div>
@@ -36,7 +36,7 @@ const DefaultViewModal = ({ handleClose, show }) => {
 };
 
 DefaultViewModal.propTypes = {
-  handleClose: PropTypes.func,
+  hideModal: PropTypes.func,
   show: PropTypes.bool,
   children: PropTypes.string
 };

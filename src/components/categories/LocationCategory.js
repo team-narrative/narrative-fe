@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AddButton from './AddButton';
+import AddLocationButton from './AddLocationButton';
 import ViewAllButton from './ViewAllButton';
 import styles from './LocationCategory.css';
 
-const LocationCategory = ({  handleAddLocation, handleViewLocations }) => {
+const LocationCategory = ({ handleViewLocations, show, hideModal, showModal }) => {
   return (
     <section className={styles.LocationCategory}>
       <h2>Locations</h2>
 
       <div>
-        <AddButton handleAddClick={handleAddLocation} />
+        <AddLocationButton show={show} hideModal={hideModal} showModal={showModal} />
         <ViewAllButton handleViewClick={handleViewLocations} />
       </div>
     </section>
@@ -18,8 +18,10 @@ const LocationCategory = ({  handleAddLocation, handleViewLocations }) => {
 };
 
 LocationCategory.propTypes = {
-  handleAddLocation: PropTypes.func.isRequired,
-  handleViewLocations: PropTypes.func.isRequired
+  handleViewLocations: PropTypes.func.isRequired,
+  show: PropTypes.bool,
+  hideModal: PropTypes.func,
+  showModal: PropTypes.func
 };
 
 export default LocationCategory;

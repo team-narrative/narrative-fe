@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Sidebar from '../components/sidebar/Sidebar';
 import CurrentStory from '../components/categories/CurrentStory';
@@ -10,6 +10,7 @@ import { getStoryList, getUserName, getUserImage, getCurrentStory } from '../sel
 import { fetchStoryList } from '../actions/storyActions';
 import { useAuth0 } from '../Auth0Provider';
 import styles from './Dashboard.css';
+import NewStory from '../components/categories/NewStory';
 
 const Dashboard = () => {
   const stories = useSelector(state => getStoryList(state));
@@ -32,16 +33,17 @@ const Dashboard = () => {
       <Sidebar stories={stories} userName={userName} userImage={userImage} />
 
       <main>
+        <NewStory title={currentStoryTitle} synopsis={currentStorySynopsis} />
         <CurrentStory title={currentStoryTitle} synopsis={currentStorySynopsis} />
-
+    
         <div className={styles.DashboardContainer}>
-          <CharacterCategory />
-          <ChapterCategory />
+          <CharacterCategory show={show} hideModal={hideModal} showModal={showModal} />
+          <ChapterCategory show={show} hideModal={hideModal} showModal={showModal} />
         </div>
 
         <div className={styles.DashboardContainer}>
-          <LocationCategory />
-          <WorldCategory />
+          <LocationCategory show={show} hideModal={hideModal} showModal={showModal} />
+          <WorldCategory show={show} hideModal={hideModal} showModal={showModal} />
         </div>
       </main>
     </div>
