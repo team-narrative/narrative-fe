@@ -13,5 +13,3 @@ export const getAllCharacters = () => get(`${CHARACTERS_URL}`);
 export const getCharactersByStoryId = (characterStoryId) => get(`${CHARACTERS_URL}/${characterStoryId}`);
 export const putCharacterByCharacterId = (characterId) => put(`${CHARACTERS_URL}/${characterId}`);
 export const deleteCharacterByCharacterId = (characterId) => del(`${CHARACTERS_URL}/${characterId}`);
-
-
