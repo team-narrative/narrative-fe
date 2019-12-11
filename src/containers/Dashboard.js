@@ -10,7 +10,6 @@ import { getStoryList, getUserName, getUserImage, getCurrentStory } from '../sel
 import { fetchStoryList } from '../actions/storyActions';
 import { useAuth0 } from '../Auth0Provider';
 import styles from './Dashboard.css';
-import NewStory from '../components/categories/NewStory';
 import Footer from '../components/footer/Footer';
 
 const Dashboard = () => {
@@ -43,7 +42,6 @@ const Dashboard = () => {
         <Sidebar stories={stories} userName={userName} userImage={userImage} />
 
         <main>
-          <NewStory title={currentStoryTitle} synopsis={currentStorySynopsis} />
           <CurrentStory title={currentStoryTitle} synopsis={currentStorySynopsis} />
 
           <div className={styles.DashboardContainer}>
