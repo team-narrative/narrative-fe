@@ -6,9 +6,9 @@ import styles from './Chapter.css';
 import arrow from '../../assets/arrow.png';
 import { editChapterByChapterId, destroyChapterById } from '../../actions/chapterActions';
 
-const Chapter = ({ chapterId, currentChapterName, currentChapterDescription }) => {
+const Chapter = ({ chapterId, currentChapterName, currentChapterText }) => {
   const [chapterName, setChapterName] = useState(currentChapterName);
-  const [chapterText, setChapterText] = useState(currentChapterDescription);
+  const [chapterText, setChapterText] = useState(currentChapterText);
   const [hidden, setHidden] = useState(true);
 
   const dispatch = useDispatch();
@@ -61,7 +61,7 @@ const Chapter = ({ chapterId, currentChapterName, currentChapterDescription }) =
 Chapter.propTypes = {
   handleSubmit: PropTypes.func,
   currentChapterName: PropTypes.string,
-  currentChapterDescription: PropTypes.string,
+  currentChapterText: PropTypes.string,
   chapterId: PropTypes.string.isRequired
 };
 

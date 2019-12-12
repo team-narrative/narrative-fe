@@ -14,15 +14,15 @@ const ChapterList = () => {
   }, []);
 
   console.log(storyId);
-  
+
   const chapters = useSelector(state => getCurrentStoryChapters(state));
 
   let storyChapters;
-  if(chapters.length > 0) {
+  if (chapters.length > 0) {
     storyChapters = chapters.map((chapter, i) => {
       return (
         <li key={chapter._id || i}>
-          <Chapter chapterId={chapter._id} currentChapterName={chapter.chapterName} currentChapterDescription={chapter.chapterDescription}/>
+          <Chapter chapterId={chapter._id} currentChapterName={chapter.chapterName} currentChapterText={chapter.chapterText} />
         </li>
       );
     });
