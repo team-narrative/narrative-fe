@@ -2,12 +2,11 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import Chapter from './Chapter';
-import { getCurrentStoryId } from '../../selectors/storySelectors';
 import { fetchChaptersByStoryId } from '../../actions/chapterActions';
 import { getCurrentStoryChapters } from '../../selectors/chapterSelectors';
 
 const ChapterList = () => {
-  const storyId = useSelector(state => getCurrentStoryId(state));
+  const storyId = localStorage.getItem('storyId');
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchChaptersByStoryId(storyId));
