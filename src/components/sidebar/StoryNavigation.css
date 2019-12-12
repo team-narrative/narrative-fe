@@ -1,0 +1,27 @@
+.StoryNavigation {
+  div {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 55vh;
+    overflow: scroll;
+  }
+
+  label {
+    margin: 5px 0px;
+    padding: 5px 0px;
+    border: 1px solid black;
+    background: #eee;
+    width: 80%;
+  }
+
+  input {
+    margin-top: 10px;
+    width: 80%;
+  }
+}
+
+.StoryTitleButton {
+  display: none;
+}

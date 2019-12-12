@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import ReactQuill from 'react-quill';
 import styles from './Character.css';
-import arrow from '../../assets/arrow.png';
+// import arrow from '../../assets/arrow.png';
 import { editCharacterByCharacterId, destroyCharacterById } from '../../actions/characterActions';
 
 const Character = ({ characterId, currentName, currentDescription }) => {
   const [name, setName] = useState(currentName);
   const [description, setDescription] = useState(currentDescription);
   const [hidden, setHidden] = useState(true);
+  const [arrow, setArrow] = useState(true);
   const dispatch = useDispatch();
 
   const formats = [
@@ -41,17 +42,28 @@ const Character = ({ characterId, currentName, currentDescription }) => {
 
   const toggle = () => {
     setHidden(!hidden);
+    setArrow(!arrow);
   };
 
   return (
     <div className={styles.Character}>
-      <img src={arrow} onClick={toggle} />
-      {hidden ? <h2>{name}</h2> : <form onSubmit={onSubmit}>
-        <input type="text" value={name} onChange={({ target }) => setName(target.value)} required />
-        <ReactQuill value={description} onChange={(value) => setDescription(value)} formats={formats} modules={modules} />
-        <button>DONE</button>
-        <button onClick={handleDelete} value="button">DELETE</button>
-      </form>
+      {hidden ?
+        <div className={styles.HiddenEditBox}>
+          <h1 onClick={toggle}>►</h1>
+          <h3>{name}</h3>
+        </div>
+        :
+        <div>
+          <div className={styles.OpenEditBox}>
+            <h1 onClick={toggle}>▼</h1>
+          </div>
+          <form className={styles.Form} onSubmit={onSubmit}>
+            Name: <input type="text" value={name} onChange={({ target }) => setName(target.value)} required />
+            <p>Description: </p><ReactQuill value={description} onChange={(value) => setDescription(value)} formats={formats} modules={modules} />
+            <button onClick={toggle}>Done</button>
+            <button onClick={handleDelete} value="button">Delete</button>
+          </form>
+        </div>
       }
     </div>
   );

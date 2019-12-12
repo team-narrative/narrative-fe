@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 // import { useDispatch } from 'react-redux';
 import ReactQuill from 'react-quill';
-import styles from '../../containers/default-view/DefaultView-Modal.css';
+import styles from '../../DefaultView-Modal.css';
 
 const EditFormModalChapter = ({ hideModal, show }) => {
   // const dispatch = useDispatch();
