@@ -1,6 +1,6 @@
 # Narrative
 
-[Deployed Site](https://www.google.com) | [Backend](https://github.com/team-narrative/narrative-be)
+[Deployed Site](https://team-narrative.netlify.com/) | [Backend](https://github.com/team-narrative/narrative-be)
 
 ## What is Narrative?
 
