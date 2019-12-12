@@ -12,9 +12,9 @@ const initialState = {
 export default function reducer(state = initialState, action) {
   switch(action.type) {
     case CREATE_STORY:
-      return { ...state, stories: [...state.stories, action.payload] };
+      return { ...state, stories: [...state.stories, action.payload], currentStory: action.payload };
     case FETCH_STORY_LIST:
-      return { ...state, stories: action.payload, userName: action.payload[0].userName, userImage: action.payload[0].userImage };
+      return { ...state, stories: action.payload, userName: action.payload[0].userName, userImage: action.payload[0].userImage, currentStory: action.payload[0] };
     case FETCH_STORY_BY_ID:
       return { ...state, currentStory: action.payload };
     case UPDATE_STORY_BY_ID:
