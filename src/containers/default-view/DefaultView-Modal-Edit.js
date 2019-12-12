@@ -7,11 +7,11 @@ import { updateStoryById } from '../../actions/storyActions';
 import styles from './DefaultView-Modal.css';
 
 const DefaultViewModalEdit = ({ hideModal, show }) => {
-
   const dispatch = useDispatch();
   const storyId = useSelector(state => getCurrentStoryId(state));
   const [title, setTitle] = useState('');
   const [synopsis, setSynopsis] = useState('');
+  localStorage.setItem('storyId', storyId);
 
   const handleSubmit = (event) => {
     event.preventDefault();
