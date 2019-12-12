@@ -4,6 +4,8 @@ import { useLogout } from '../../Auth0Provider';
 import styles from './UserCard.css';
 
 const UserCard = ({ userName, userImage }) => {
+  console.log(userName);
+  console.log(userImage);
   const logout = useLogout();
   const handleLogOut = () => {
     logout({

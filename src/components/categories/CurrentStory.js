@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import DefaultViewModalEdit from '../../containers/default-view/DefaultView-Modal-Edit';
 import styles from './CurrentStory.css';
+import { destroyStoryById } from '../../actions/storyActions';
 
 const CurrentStory = ({ title, synopsis }) => {
+  const storyId = localStorage.getItem('storyId');
   const [show, setShow] = useState(false);
+  const dispatch = useDispatch();
 
   const showModal = () => {
     setShow(true);
@@ -14,6 +18,11 @@ const CurrentStory = ({ title, synopsis }) => {
     setShow(false);
   };
 
+  const handleDelete = event => {
+    event.preventDefault();
+    dispatch(destroyStoryById(storyId));
+  };
+
   return (
     <section className={styles.CurrentStory}>
       <div className={styles.CurrentStoryContainer}>
@@ -21,6 +30,7 @@ const CurrentStory = ({ title, synopsis }) => {
         <h2>{title}</h2>
         <DefaultViewModalEdit show={show} hideModal={hideModal} />
         <button className={styles.CurrentStoryButton} type='button' onClick={showModal}>Edit Story</button>
+        <button onClick={handleDelete} value="button">DELETE</button>
       </div>
 
       <div className={styles.SynopsisContainer}>

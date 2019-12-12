@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import World from './World';
 import { fetchWorldsByStoryId } from '../../actions/worldActions';
 import { getCurrentStoryWorlds } from '../../selectors/worldSelectors';
+import Header from '../header/Header';
+import Footer from '../footer/Footer';
 
 const WorldList = () => {
   const storyId = localStorage.getItem('storyId');
@@ -13,9 +15,6 @@ const WorldList = () => {
 
     dispatch(fetchWorldsByStoryId(storyId));
   }, []);
-
-
-  console.log(storyId);
 
   const worlds = useSelector(state => getCurrentStoryWorlds(state));
   let storyWorlds;
@@ -30,12 +29,16 @@ const WorldList = () => {
   }
 
   return (
-    <div>
-      <h2>Worlds</h2>
-      <ul>
-        {storyWorlds}
-      </ul>
-    </div>
+    <>
+      <Header/>
+      <div>
+        <h2>Worlds</h2>
+        <ul>
+          {storyWorlds}
+        </ul>
+      </div>
+      <Footer/>
+    </>
   );
 };
 
