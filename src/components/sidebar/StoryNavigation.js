@@ -16,14 +16,12 @@ const StoryNavigation = ({ stories }) => {
       });
   };
 
-  const storyElements = stories.map((story) => {
+  const storyElements = stories.map((story, i) => {
     return (
-      <>
-        <label onChange={handleClick} key={story._id} htmlFor={story._id}>
-          <input className={styles.StoryTitleButton} id={story._id} type='radio' name='story-title' value={story._id} />
-          {story.storyTitle}
-        </label>
-      </>
+      <label onChange={handleClick} key={story._id || i} htmlFor={story._id}>
+        <input className={styles.StoryTitleButton} id={story._id} type='radio' name='story-title' value={story._id} />
+        {story.storyTitle}
+      </label>
     );
   });
 
