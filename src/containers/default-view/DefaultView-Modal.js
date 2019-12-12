@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { createStory } from '../../actions/storyActions';
-import styles from '../../components/categories/modal-css/DefaultViewModal.css';
+import styles from '../../DefaultView-Modal.css';
 
 const DefaultViewModal = ({ hideModal, show }) => {
   const dispatch = useDispatch();

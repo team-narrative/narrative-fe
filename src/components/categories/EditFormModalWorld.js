@@ -3,10 +3,9 @@ import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import ReactQuill from 'react-quill';
-import styles from '../../containers/default-view/DefaultView-Modal.css';
 import { createWorld } from '../../actions/worldActions';
 import { getCurrentStoryId } from '../../selectors/storySelectors';
-// import styles from '../../DefaultView-Modal.css';
+import styles from '../../DefaultView-Modal.css';
 
 const EditFormModalWorld = ({ hideModal, show }) => {
   const dispatch = useDispatch();
