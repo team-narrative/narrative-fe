@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import Chapter from './Chapter';
+import Header from '../header/Header';
+import Footer from '../footer/Footer';
 import { fetchChaptersByStoryId } from '../../actions/chapterActions';
 import { getCurrentStoryChapters } from '../../selectors/chapterSelectors';
 
@@ -27,12 +29,16 @@ const ChapterList = () => {
   }
 
   return (
-    <div>
-      <h2>Chapters</h2>
-      <ul>
-        {storyChapters}
-      </ul>
-    </div>
+    <>
+      <Header />
+      <div>
+        <h2>Chapters</h2>
+        <ul>
+          {storyChapters}
+        </ul>
+      </div>
+      <Footer />
+    </>
   );
 };
 

@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 import Character from './Character';
 import { fetchCharactersByStoryId } from '../../actions/characterActions';
 import { getCurrentStoryCharacters } from '../../selectors/characterSelectors';
+import styles from './CharacterList.css';
+import Header from '../header/Header';
+import Footer from '../footer/Footer';
 
 const CharacterList = () => {
   const storyId = localStorage.getItem('storyId');
@@ -26,11 +29,15 @@ const CharacterList = () => {
   }
 
   return (
-    <div>
-      <h2>Characters</h2>
-      <ul>
-        {storyCharacters}
-      </ul>
+    <div className={styles.ListContainer}>
+      <Header />
+      <div className={styles.CharacterList}>
+        <h2>Characters</h2>
+        <ul>
+          {storyCharacters}
+        </ul>
+      </div>
+      <Footer />
     </div>
   );
 };

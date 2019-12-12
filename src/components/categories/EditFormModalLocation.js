@@ -6,6 +6,7 @@ import ReactQuill from 'react-quill';
 import styles from '../../containers/default-view/DefaultView-Modal.css';
 import { getCurrentStoryId } from '../../selectors/storySelectors';
 import { createLocation } from '../../actions/locationActions';
+// import styles from '../../DefaultView-Modal.css';
 
 const EditFormModalLocation = ({ hideModal, show }) => {
   const dispatch = useDispatch();

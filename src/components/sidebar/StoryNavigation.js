@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { fetchStoryById } from '../../actions/storyActions';
 import { getStoryByStoryId } from '../../services/stories';
+import styles from './StoryNavigation.css';
 
 const StoryNavigation = ({ stories, handleSubmit }) => {
   const dispatch = useDispatch();
@@ -30,24 +31,25 @@ const StoryNavigation = ({ stories, handleSubmit }) => {
     // }
     // else {
     return (
-      <li onClick={handleClick} key={story._id}>
-        <label htmlFor={story._id}>
-          <input type='radio' name='story-title' value={story._id} />
+      <>
+        <label onChange={handleClick} key={story._id} htmlFor={story._id}>
+          <input className={styles.StoryTitleButton} id={story._id} type='radio' name='story-title' value={story._id} />
           {story.storyTitle}
         </label>
-      </li>
+      </>
     );
     // }
   });
 
   return (
-    <section>
+    <section className={styles.StoryNavigation}>
       <form onSubmit={event => handleSubmit(event, storySearch)}>
         <input name="story-search" type="text" placeholder="Search Stories" value={storySearch} onChange={({ target }) => setStorySearch(target.value)} />
 
-        <ul>
+        <div>
           {storyElements}
-        </ul>
+        </div>
+
       </form>
     </section>
   );
