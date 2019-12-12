@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import Character from './Character';
-import { getCurrentStoryId } from '../../selectors/storySelectors';
 import { fetchCharactersByStoryId } from '../../actions/characterActions';
 import { getCurrentStoryCharacters } from '../../selectors/characterSelectors';
 import styles from './CharacterList.css';
@@ -10,7 +9,7 @@ import Header from '../header/Header';
 import Footer from '../footer/Footer';
 
 const CharacterList = () => {
-  const storyId = useSelector(state => getCurrentStoryId(state));
+  const storyId = localStorage.getItem('storyId');
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchCharactersByStoryId(storyId));

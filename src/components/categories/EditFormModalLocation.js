@@ -1,11 +1,20 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
 import ReactQuill from 'react-quill';
-import styles from '../../DefaultView-Modal.css';
+import styles from '../../containers/default-view/DefaultView-Modal.css';
+import { getCurrentStoryId } from '../../selectors/storySelectors';
+import { createLocation } from '../../actions/locationActions';
+// import styles from '../../DefaultView-Modal.css';
 
 const EditFormModalLocation = ({ hideModal, show }) => {
-  const [heading, setHeading] = useState('');
-  const [description, setDescription] = useState('');
+  const dispatch = useDispatch();
+  const locationStoryId = useSelector(state => getCurrentStoryId(state));
+
+  const [locationName, setLocationName] = useState('');
+  const [locationDescription, setLocationDescription] = useState('');
+  const [redirect, setRedirect] = useState(false);
 
   const formats = [
     'header',
@@ -24,10 +33,18 @@ const EditFormModalLocation = ({ hideModal, show }) => {
     ],
   };
 
+  if(redirect) return <Redirect to="/locations" />;
+
+  const handleChange = ({ target }) => {
+    setLocationName(target.value);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    setHeading('');
-    setDescription('');
+    dispatch(createLocation(locationStoryId, locationName, locationDescription));
+    setLocationName('');
+    setLocationDescription('');
+    setRedirect(true);
   };
 
   return (
@@ -35,8 +52,8 @@ const EditFormModalLocation = ({ hideModal, show }) => {
       <div className={show ? styles.displayBlock : styles.displayNone} >
         <section className={styles.modalMain} >
           <form onSubmit={handleSubmit}>
-            Name:<input type="text" value={heading} placeholder="Write Name or Title" onChange={({ target }) => setHeading(target.value)} required />
-            Description:<ReactQuill value={description} onChange={(value) => setDescription(value)} formats={formats} modules={modules} />
+            Name:<input type="text" value={locationName} placeholder="Write Name or Title" onChange={handleChange} required />
+            Description:<ReactQuill value={locationDescription} onChange={(value) => setLocationDescription(value)} formats={formats} modules={modules} />
             <button value="button" onClick={hideModal}>Submit</button>
           </form>
           <button onClick={hideModal}>✗</button>

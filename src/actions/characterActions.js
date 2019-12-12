@@ -1,4 +1,4 @@
-import { postCharactersByStoryId, getCharactersByStoryId, getAllCharacters, putCharacterByCharacterId, deleteCharacterByCharacterId } from '../services/characters';
+import { postCharactersByStoryId, getCharactersByStoryId, putCharacterByCharacterId, deleteCharacterByCharacterId } from '../services/characters';
 
 export const CREATE_CHARACTER = 'CREATE_CHARACTER';
 export const createCharacter = (characterStoryId, characterName, characterDescription, characterTags) => dispatch => {
