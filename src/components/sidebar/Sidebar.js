@@ -1,14 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import UserCard from './UserCard';
 import StoryNavigation from './StoryNavigation';
 import styles from './Sidebar.css';
+import NewStory from '../categories/NewStory';
+import { getCurrentStory } from '../../selectors/storySelectors';
 
 const Sidebar = ({ stories, userName, userImage }) => {
+
+  const currentStory = useSelector(state => getCurrentStory(state));
+  const currentStoryTitle = currentStory.storyTitle;
+  const currentStorySynopsis = currentStory.storySynopsis;
 
   return (
     <aside className={styles.Sidebar}>
       <UserCard userName={userName} userImage={userImage} />
+      <NewStory title={currentStoryTitle} synopsis={currentStorySynopsis}/>
       <StoryNavigation stories={stories} />
     </aside>
   );

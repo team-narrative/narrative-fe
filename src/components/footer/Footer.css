@@ -1,9 +1,12 @@
 .Footer {
-  text-align: center;
-  background-color: palevioletred;
-  margin-top: 0;
+  position: fixed;
   height: 5vh;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  background-color: lightpink;
 }

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getCurrentStoryId } from '../../selectors/storySelectors';
 import { putStoryByStoryId } from '../../services/stories';
 import { updateStoryById } from '../../actions/storyActions';
-import styles from './DefaultView-Modal.css';
+import styles from './DefaultView-Modal-Edit.css';
 
 const DefaultViewModalEdit = ({ hideModal, show }) => {
   const dispatch = useDispatch();
@@ -23,8 +23,6 @@ const DefaultViewModalEdit = ({ hideModal, show }) => {
 
   return (
     <div>
-      <p>Current Story</p>
-
       <div className={show ? styles.displayBlock : styles.displayNone}>
         <section className={styles.modalMain}>
           <form onSubmit={handleSubmit}>

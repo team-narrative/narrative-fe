@@ -3,12 +3,11 @@ import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import ReactQuill from 'react-quill';
-import styles from '../../containers/default-view/DefaultView-Modal.css';
+import styles from '../../DefaultView-Modal.css';
 import { createCharacter } from '../../actions/characterActions';
 import { getCurrentStoryId } from '../../selectors/storySelectors';
 
 const EditFormModalCharacter = ({ hideModal, show }) => {
-
   const dispatch = useDispatch();
   const characterStoryId = useSelector(state => getCurrentStoryId(state));
 
