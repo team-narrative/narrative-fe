@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import Location from './Location';
+import { getCurrentStoryId } from '../../selectors/storySelectors';
+import { fetchLocationsByStoryId } from '../../actions/locationActions';
+import { getCurrentStoryLocations } from '../../selectors/locationSelectors';
 
-const LocationList = ({ locations }) => {
+const LocationList = () => {
+  const storyId = useSelector(state => getCurrentStoryId(state));
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchLocationsByStoryId(storyId));
+  }, []);
+
+  const locations = useSelector(state => getCurrentStoryLocations(state));
+
   let storyLocations;
   if(locations.length > 0) {
     storyLocations = locations.map((location, i) => {
       return (
         <li key={location._id || i}>
-          <Location currentLocationName={location.LocationName} currentLocationDescription={location.LocationDescription}/>
+          <Location locationId={location._id} currentLocationName={location.locationName} currentLocationDescription={location.locationDescription}/>
         </li>
       );
     });
