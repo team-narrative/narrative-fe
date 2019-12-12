@@ -1,35 +1,79 @@
-.StoryNavigation {
-  div {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-height: 62.5vh;
+@media screen and (max-width: 640px) {
+  .StoryNavigation {
+    background-color: palegreen;
+    width: 45%;
     overflow: scroll;
+
+    div {
+      padding-top: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    label {
+      margin-bottom: 5px;
+      padding: 5px 0px;
+      background-color: rgb(98, 98, 99);
+      color: white;
+      font-size: .9rem;
+      width: 80%;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    label:hover {
+      background-color: #E58A55;
+      color: black;
+      cursor: pointer;
+    }
+  
+    input {
+      width: 80%;
+    }
   }
 
-  label {
-    margin: 5px 0px;
-    padding: 5px 0px;
-    background-color: rgb(98, 98, 99);
-    color: white;
-    font-size: .9rem;
-    width: 80%;
-    border-radius: 5px;
-  }
-
-  label:hover {
-    background-color: #E58A55;
-    color: black;
-    cursor: pointer;
-  }
-
-  input {
-    margin-top: 10px;
-    width: 80%;
+  .StoryTitleButton {
+    display: none;
   }
 }
+@media screen and (min-width: 641px) and (max-width: 1007px) {
 
-.StoryTitleButton {
-  display: none;
+  }
+@media screen and (min-width: 1008px) {
+  .StoryNavigation {
+    div {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-height: 62.5vh;
+      overflow: scroll;
+    }
+  
+    label {
+      margin: 5px 0px;
+      padding: 5px 0px;
+      background-color: rgb(98, 98, 99);
+      color: white;
+      font-size: .9rem;
+      width: 80%;
+      border-radius: 5px;
+    }
+  
+    label:hover {
+      background-color: #E58A55;
+      color: black;
+      cursor: pointer;
+    }
+  
+    input {
+      margin-top: 10px;
+      width: 80%;
+    }
+  }
+  
+  .StoryTitleButton {
+    display: none;
+  }
 }
