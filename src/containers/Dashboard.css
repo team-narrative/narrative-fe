@@ -5,7 +5,25 @@
   }
 }
 @media screen and (min-width: 641px) and (max-width: 1007px) {
-
+  .Dashboard {
+    display: flex;
+    
+    main {
+      background-color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      height: 95vh;
+      width: 100%;
+    }
+  }
+  
+  .DashboardContainer {
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    width: 100%;
+  }
 }
 @media screen and (min-width: 1008px) {
   .Dashboard {
