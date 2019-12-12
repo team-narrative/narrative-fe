@@ -2,12 +2,11 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import Location from './Location';
-import { getCurrentStoryId } from '../../selectors/storySelectors';
 import { fetchLocationsByStoryId } from '../../actions/locationActions';
 import { getCurrentStoryLocations } from '../../selectors/locationSelectors';
 
 const LocationList = () => {
-  const storyId = useSelector(state => getCurrentStoryId(state));
+  const storyId = localStorage.getItem('storyId');
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchLocationsByStoryId(storyId));
