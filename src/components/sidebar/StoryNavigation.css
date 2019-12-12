@@ -4,21 +4,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-height: 55vh;
+    max-height: 62.5vh;
     overflow: scroll;
   }
 
   label {
     margin: 5px 0px;
     padding: 5px 0px;
-    border: 1px solid navy;
-    background-color: paleturquoise;
+    background-color: rgb(98, 98, 99);
+    color: white;
+    font-size: .9rem;
     width: 80%;
     border-radius: 5px;
   }
 
   label:hover {
-    background-color: palegoldenrod;
+    background-color: #E58A55;
+    color: black;
     cursor: pointer;
   }
 

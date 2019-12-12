@@ -15,15 +15,19 @@
     align-self: center;
     margin: 5px 0px 10px 0px;
     width: 50%;
-    background-color: orange;
+    background-color: #247E7F;
+    color: white;
     border: none;
     border-radius: 5px;
     padding: 5px;
     font-size: .75em;
+    text-transform: uppercase;
+    transition: all ease-in .1s;
   }
 
   button:hover {
-    background-color: red;
+    background-color: #9E221A;
+    transform: scale(1.05);
     cursor: pointer;
   }
 

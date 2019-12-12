@@ -14,6 +14,11 @@ const LandingPage = () => {
       <section>
         <img src={logo} />
         <Link to={'/stories'}>Click To Get Started</Link>
+        <div>
+          <p>
+            This is where our text will go which will explain what the app does.
+          </p>
+        </div>
       </section>
     </div>
 

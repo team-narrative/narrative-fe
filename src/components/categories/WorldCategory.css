@@ -1,9 +1,13 @@
 .WorldCategory {
-  background-color: aqua;
+  background-color: #c0bebe;
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  margin-right: 2%;
+  margin-bottom: 2%;
 
   h2, div {
     align-self: center;
