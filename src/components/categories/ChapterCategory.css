@@ -17,7 +17,22 @@
   }
 }
 @media screen and (min-width: 641px) and (max-width: 1007px) {
+  .ChapterCategory {
+    background-color: #ccc;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50%;
+    margin-bottom: 5px;
 
+    h2, div {
+      align-self: center;
+    }
+
+    button {
+      background-color: #fff;
+    }
+  }
 }
 @media screen and (min-width: 1008px) {
   .ChapterCategory {
