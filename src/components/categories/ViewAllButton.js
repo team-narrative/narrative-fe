@@ -8,7 +8,7 @@ const ViewAllButton = ({ handleViewClick }) => {
 };
 
 ViewAllButton.propTypes = {
-  handleViewClick: PropTypes.func.isRequired
+  handleViewClick: PropTypes.func
 };
 
 export default ViewAllButton;

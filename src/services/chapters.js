@@ -11,5 +11,11 @@ export const postChapterByStoryId = (chapterStoryId, chapterName, chapterText, c
 
 export const getAllChapters = () => get(`${CHAPTERS_URL}`);
 export const getChaptersByStoryId = (chapterStoryId) => get(`${CHAPTERS_URL}/${chapterStoryId}`);
-export const putChapterByChapterId = (chapterId) => put(`${CHAPTERS_URL}/${chapterId}`);
+
+export const putChapterByChapterId = (chapterId, chapterName, chapterText) => put(`${CHAPTERS_URL}/${chapterId}`,
+  {
+    chapterName,
+    chapterText,
+  }
+);
 export const deleteChapterByChapterId = (chapterId) => del(`${CHAPTERS_URL}/${chapterId}`);
