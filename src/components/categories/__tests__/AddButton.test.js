@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import AddButton from '../AddButton';
+import AddChapterButton from '../AddChapterButton';
 
-describe('AddButton component', () => {
+describe('AddChapterButton component', () => {
   it('renders an add button', () => {
-    const wrapper = shallow(<AddButton handleAddClick={() => true} />);
+    const wrapper = shallow(<AddChapterButton handleAddClick={() => true} />);
     expect(wrapper).toMatchSnapshot();
   });
 });
