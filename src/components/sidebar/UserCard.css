@@ -1,38 +1,84 @@
-.UserCard {
-  height: 20vh;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+@media screen and (max-width: 640px) {
+  .UserCard {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 35%;
 
-  img {
-    margin: 8px 0px 5px 0px;
-    max-width: 100px;
-    border-radius: 50%;
-    align-self: center;
-  }
+    img {
+      max-width: 50px;
+      border-radius: 50%;
+      align-self: center;
+    }
 
-  button {
-    align-self: center;
-    margin: 5px 0px 10px 0px;
-    width: 50%;
-    background-color: #247E7F;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 5px;
-    font-size: .75em;
-    text-transform: uppercase;
-    transition: all ease-in .1s;
-  }
-
-  button:hover {
-    background-color: #9E221A;
-    transform: scale(1.05);
-    cursor: pointer;
-  }
-
-  h3 {
-    align-self: center;
-    margin-top: 5px;
+    button {
+      align-self: center;
+      background-color: #247E7F;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 5px;
+      font-size: .75em;
+      text-transform: uppercase;
+      transition: all ease-in .1s;
+      width: 70px;
+      height: 25px;
+    }
+  
+    button:hover {
+      background-color: #9E221A;
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+  
+    h3 {
+      align-self: center;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
   }
 }
+@media screen and (min-width: 641px) and (max-width: 1007px) {
+
+}
+@media screen and (min-width: 1008px) {
+  .UserCard {
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  
+    img {
+      margin: 8px 0px 5px 0px;
+      max-width: 100px;
+      border-radius: 50%;
+      align-self: center;
+    }
+  
+    button {
+      align-self: center;
+      margin: 5px 0px 10px 0px;
+      width: 50%;
+      background-color: #247E7F;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 5px;
+      font-size: .75em;
+      text-transform: uppercase;
+      transition: all ease-in .1s;
+    }
+  
+    button:hover {
+      background-color: #9E221A;
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+  
+    h3 {
+      align-self: center;
+      margin-top: 5px;
+    }
+  }
+}
+
