@@ -20,11 +20,11 @@ export default function App() {
         <Switch>
           <Route exact path='/' component={LandingPage} />
           <Route exact path='/stories' component={withSession(Dashboard)} />
-          <Route path='/characters' component={CharacterList} />
-          <Route path='/chapters' component={ChapterList} />
-          <Route path='/locations' component={LocationList} />
-          <Route path='/worlds' component={WorldList} />
-          <Route path='/about-us' component={AboutUs}/>
+          <Route path='/characters' component={withSession(CharacterList)} />
+          <Route path='/chapters' component={withSession(ChapterList)} />
+          <Route path='/locations' component={withSession(LocationList)} />
+          <Route path='/worlds' component={withSession(WorldList)} />
+          <Route path='/about-us' component={withSession(AboutUs)}/>
         </Switch>
       </Router>
     </>

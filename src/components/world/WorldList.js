@@ -2,16 +2,20 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import World from './World';
-import { getCurrentStoryId } from '../../selectors/storySelectors';
 import { fetchWorldsByStoryId } from '../../actions/worldActions';
 import { getCurrentStoryWorlds } from '../../selectors/worldSelectors';
 
 const WorldList = () => {
-  const storyId = useSelector(state => getCurrentStoryId(state));
+  const storyId = localStorage.getItem('storyId');
   const dispatch = useDispatch();
+
   useEffect(() => {
+
     dispatch(fetchWorldsByStoryId(storyId));
   }, []);
+
+
+  console.log(storyId);
 
   const worlds = useSelector(state => getCurrentStoryWorlds(state));
   let storyWorlds;
