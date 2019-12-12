@@ -1,13 +1,12 @@
 .UserCard {
-  background-color: orange;
-  height: 35vh;
+  height: 20vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
 
   img {
     margin: 8px 0px 5px 0px;
-    max-width: 60%;
+    max-width: 100px;
     border-radius: 50%;
     align-self: center;
   }
@@ -16,6 +15,16 @@
     align-self: center;
     margin: 5px 0px 10px 0px;
     width: 50%;
+    background-color: orange;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: .75em;
+  }
+
+  button:hover {
+    background-color: red;
+    cursor: pointer;
   }
 
   h3 {

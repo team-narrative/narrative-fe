@@ -4,7 +4,6 @@ import DefaultViewModal from '../../containers/default-view/DefaultView-Modal';
 import styles from './NewStory.css';
 
 const NewStory = () => {
-
   const [show, setShow] = useState(false);
 
   const showModal = () => {

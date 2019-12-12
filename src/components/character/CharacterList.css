@@ -7,11 +7,21 @@
   width: 50vw;
   border: 1px solid black;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #fff;
 
   h2 {
     padding: 10px;
     font-size: 1.5em;
     background: rgb(187, 186, 186);
   }
+}
+
+header {
+  background-color: peachpuff;
+  height: 3vh;
+}
+
+body {
+  background-color: skyblue;
 }
 
