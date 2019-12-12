@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AboutDeveloperCard component renders an about developer card 1`] = `
+<Fragment>
+  <h2>
+    developer
+  </h2>
+  <div>
+    <img
+      alt="developer"
+      src="developer.jpg"
+    />
+    <p>
+      I am a developer
+    </p>
+  </div>
+</Fragment>
+`;

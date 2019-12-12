@@ -1,0 +1,18 @@
+.WorldCategory {
+  background-color: aqua;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h2, div {
+    align-self: center;
+  }
+}
+
+.WorldCategoryContainer {
+  width: 85%;
+  height: 40%;
+  display: flex;
+  justify-content: space-between;
+}
