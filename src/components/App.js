@@ -10,6 +10,7 @@ import Dashboard from '../containers/Dashboard';
 import CharacterList from './character/CharacterList';
 import AboutUs from '../containers/AboutUs';
 import ChapterList from './chapter/ChapterList';
+import LocationList from './location/LocationList';
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
           <Route exact path='/stories' component={withSession(Dashboard)} />
           <Route path='/characters' component={CharacterList} />
           <Route path='/chapters' component={ChapterList} />
+          <Route path='/locations' component={LocationList} />
           <Route path='/about-us' component={AboutUs}/>
         </Switch>
       </Router>

@@ -13,12 +13,11 @@ const ChapterList = () => {
     dispatch(fetchChaptersByStoryId(storyId));
   }, []);
 
-  console.log(storyId);
 
   const chapters = useSelector(state => getCurrentStoryChapters(state));
 
   let storyChapters;
-  if (chapters.length > 0) {
+  if(chapters.length > 0) {
     storyChapters = chapters.map((chapter, i) => {
       return (
         <li key={chapter._id || i}>
