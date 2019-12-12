@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import ReactQuill from 'react-quill';
 import styles from './World.css';
 import arrow from '../../assets/arrow.png';
+import { editWorldByWorldId, destroyWorldById } from '../../actions/worldActions';
 
-const World = ({ handleSubmit, currentWorldName, currentWorldDescription }) => {
+const World = ({ worldId, currentWorldName, currentWorldDescription }) => {
   const [worldName, setWorldName] = useState(currentWorldName);
   const [worldDescription, setWorldDescription] = useState(currentWorldDescription);
   const [hidden, setHidden] = useState(true);
+  const dispatch = useDispatch();
 
   const formats = [
     'header',
@@ -27,8 +30,13 @@ const World = ({ handleSubmit, currentWorldName, currentWorldDescription }) => {
   };
 
   const onSubmit = event => {
-    event.preventDefault;
-    handleSubmit(worldName, worldDescription);
+    event.preventDefault();
+    dispatch(editWorldByWorldId(worldId, worldName, worldDescription));
+  };
+
+  const handleDelete = event => {
+    event.preventDefault();
+    dispatch(destroyWorldById(worldId));
   };
 
   const toggle = () => {
@@ -42,13 +50,14 @@ const World = ({ handleSubmit, currentWorldName, currentWorldDescription }) => {
         <input type="text" value={worldName} onChange={({ target }) => setWorldName(target.value)} required />
         <ReactQuill value={worldDescription} onChange={(value) => setWorldDescription(value)} formats={formats} modules={modules} />
         <button>DONE</button>
+        <button onClick={handleDelete} value="button">DELETE</button>
       </form>}
     </div>
   );
 };
 
 World.propTypes = {
-  handleSubmit: PropTypes.func,
+  worldId: PropTypes.string,
   currentWorldName: PropTypes.string,
   currentWorldDescription: PropTypes.string
 };
