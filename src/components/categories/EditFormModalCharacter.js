@@ -8,7 +8,6 @@ import { createCharacter } from '../../actions/characterActions';
 import { getCurrentStoryId } from '../../selectors/storySelectors';
 
 const EditFormModalCharacter = ({ hideModal, show }) => {
-
   const dispatch = useDispatch();
   const characterStoryId = useSelector(state => getCurrentStoryId(state));
 
@@ -36,7 +35,6 @@ const EditFormModalCharacter = ({ hideModal, show }) => {
   if(redirect) return <Redirect to="/characters" />;
 
   const handleChange = ({ target }) => {
-    console.log(target.value);
     setcharacterName(target.value);
   };
 

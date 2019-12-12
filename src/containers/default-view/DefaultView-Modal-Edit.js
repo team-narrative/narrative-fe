@@ -7,7 +7,6 @@ import { updateStoryById } from '../../actions/storyActions';
 import styles from './DefaultView-Modal-Edit.css';
 
 const DefaultViewModalEdit = ({ hideModal, show }) => {
-
   const dispatch = useDispatch();
   const storyId = useSelector(state => getCurrentStoryId(state));
   const [title, setTitle] = useState('');
@@ -23,8 +22,6 @@ const DefaultViewModalEdit = ({ hideModal, show }) => {
 
   return (
     <div>
-      <p>Current Story</p>
-
       <div className={show ? styles.displayBlock : styles.displayNone}>
         <section className={styles.modalMain}>
           <form onSubmit={handleSubmit}>

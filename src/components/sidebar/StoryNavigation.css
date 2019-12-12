@@ -11,9 +11,15 @@
   label {
     margin: 5px 0px;
     padding: 5px 0px;
-    border: 1px solid black;
-    background: #eee;
+    border: 1px solid navy;
+    background-color: paleturquoise;
     width: 80%;
+    border-radius: 5px;
+  }
+
+  label:hover {
+    background-color: palegoldenrod;
+    cursor: pointer;
   }
 
   input {

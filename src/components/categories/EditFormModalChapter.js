@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-// import { useDispatch } from 'react-redux';
 import ReactQuill from 'react-quill';
 import styles from '../../DefaultView-Modal.css';
 
 const EditFormModalChapter = ({ hideModal, show }) => {
-  // const dispatch = useDispatch();
-
   const [heading, setHeading] = useState('');
   const [description, setDescription] = useState('');
 
@@ -29,7 +26,6 @@ const EditFormModalChapter = ({ hideModal, show }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // dispatch(createCharacter(heading, description));
     setHeading('');
     setDescription('');
   };
