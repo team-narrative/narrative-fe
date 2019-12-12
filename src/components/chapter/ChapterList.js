@@ -14,7 +14,6 @@ const ChapterList = () => {
     dispatch(fetchChaptersByStoryId(storyId));
   }, []);
 
-
   const chapters = useSelector(state => getCurrentStoryChapters(state));
 
   let storyChapters;
