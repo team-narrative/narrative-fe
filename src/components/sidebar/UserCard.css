@@ -1,40 +1,48 @@
 .UserCard {
-  height: 20vh;
+  height: 25vh;
   display: flex;
   font-family: 'Roboto', sans-serif;
+  font-size: .9em;
+  font-weight: 300;
   justify-content: center;
   flex-direction: column;
   padding: 10px;
+  margin-top: 15px;
+  color: #a0a0a0;
+  border-bottom: 1px dashed #5c5250;
+
+  .LogoImage {
+    border-radius: 0;
+    max-width: 80px;
+  }
 
   img {
     margin: 8px 0px 5px 0px;
-    max-width: 100px;
+    max-width: 40px;
     border-radius: 50%;
     align-self: center;
   }
 
   button {
-    align-self: center;
-    margin: 5px 0px 10px 0px;
-    width: 50%;
+    width: 30%;
     background-color: #247E7F;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    border: 1px solid #A0A0A0;
+    color: #fff;
     padding: 5px;
+    margin: 8px;
     font-size: .75em;
     text-transform: uppercase;
     transition: all ease-in .1s;
   }
 
   button:hover {
-    background-color: #9E221A;
+    background-color: #335556;
     transform: scale(1.05);
     cursor: pointer;
   }
 
   h3 {
-    align-self: center;
+    align-self: left;
     margin-top: 5px;
   }
 }
