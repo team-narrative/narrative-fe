@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
-// import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import ReactQuill from 'react-quill';
 import styles from '../../containers/default-view/DefaultView-Modal.css';
+import { getCurrentStoryId } from '../../selectors/storySelectors';
+import { createChapter } from '../../actions/chapterActions';
 
 const EditFormModalChapter = ({ hideModal, show }) => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const chapterStoryId = useSelector(state => getCurrentStoryId(state));
 
-  const [heading, setHeading] = useState('');
-  const [description, setDescription] = useState('');
+  const [chapterName, setChapterName] = useState('');
+  const [chapterText, setChapterText] = useState('');
+  const [redirect, setRedirect] = useState(false);
 
   const formats = [
     'header',
@@ -27,11 +32,18 @@ const EditFormModalChapter = ({ hideModal, show }) => {
     ],
   };
 
+  if(redirect) return <Redirect to="/chapters" />;
+
+  const handleChange = ({ target }) => {
+    setChapterName(target.value);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    // dispatch(createCharacter(heading, description));
-    setHeading('');
-    setDescription('');
+    dispatch(createChapter(chapterStoryId, chapterName, chapterText));
+    setChapterName('');
+    setChapterText('');
+    setRedirect(true);
   };
 
   return (
@@ -39,8 +51,8 @@ const EditFormModalChapter = ({ hideModal, show }) => {
       <div className={show ? styles.displayBlock : styles.displayNone} >
         <section className={styles.modalMain}>
           <form onSubmit={handleSubmit}>
-            Name:<input type="text" value={heading} placeholder="Write Name or Title" onChange={({ target }) => setHeading(target.value)} required />
-            Description:<ReactQuill value={description} onChange={(value) => setDescription(value)} formats={formats} modules={modules} />
+            Name:<input type="text" value={chapterName} placeholder="Write Name or Title" onChange={handleChange} required />
+            Description:<ReactQuill value={chapterText} onChange={(value) => setChapterText(value)} formats={formats} modules={modules} />
             <button value="button" onClick={hideModal}>Submit</button>
           </form>
           <button onClick={hideModal}>✗</button>

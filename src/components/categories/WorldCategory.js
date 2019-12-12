@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import AddWorldButton from './AddWorldButton';
 import ViewAllButton from './ViewAllButton';
 import styles from './WorldCategory.css';
 
-const WorldCategory = ({ handleViewWorlds, show, hideModal, showModal }) => {
+const WorldCategory = ({ show, hideModal, showModal }) => {
+  const [redirect, setRedirect] = useState(false);
+
+  if(redirect) return <Redirect to="/worlds" />;
+  const handleViewWorlds = () => {
+    setRedirect(true);
+  };
   return (
     <section className={styles.WorldCategory}>
       <h2 className={styles.h2}>World Building</h2>
@@ -19,7 +26,6 @@ const WorldCategory = ({ handleViewWorlds, show, hideModal, showModal }) => {
 };
 
 WorldCategory.propTypes = {
-  handleViewWorlds: PropTypes.func.isRequired,
   show: PropTypes.bool,
   hideModal: PropTypes.func,
   showModal: PropTypes.func
