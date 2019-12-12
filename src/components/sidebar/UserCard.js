@@ -13,6 +13,7 @@ const UserCard = ({ userName, userImage }) => {
 
   return (
     <section className={styles.UserCard}>
+      <img className={styles.LogoImage} src="https://i.ibb.co/McY8Hkk/nar-square-trans.png"/>
       <img src={userImage} alt={userName} />
       <h3>{userName}</h3>
       <button onClick={handleLogOut}>Logout</button>
