@@ -36,7 +36,6 @@ const EditFormModalCharacter = ({ hideModal, show }) => {
   if(redirect) return <Redirect to="/characters" />;
 
   const handleChange = ({ target }) => {
-    console.log(target.value);
     setcharacterName(target.value);
   };
 

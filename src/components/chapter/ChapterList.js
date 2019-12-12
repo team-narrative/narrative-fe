@@ -1,14 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import Chapter from './Chapter';
+import { getCurrentStoryId } from '../../selectors/storySelectors';
+import { fetchChaptersByStoryId } from '../../actions/chapterActions';
+import { getCurrentStoryChapters } from '../../selectors/chapterSelectors';
 
-const ChapterList = ({ chapters }) => {
+const ChapterList = () => {
+  const storyId = useSelector(state => getCurrentStoryId(state));
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchChaptersByStoryId(storyId));
+  }, []);
+
+
+  const chapters = useSelector(state => getCurrentStoryChapters(state));
+
   let storyChapters;
   if(chapters.length > 0) {
     storyChapters = chapters.map((chapter, i) => {
       return (
         <li key={chapter._id || i}>
-          <Chapter currentChapterName={chapter.chapterName} currentChapterDescription={chapter.chapterDescription}/>
+          <Chapter chapterId={chapter._id} currentChapterName={chapter.chapterName} currentChapterText={chapter.chapterText} />
         </li>
       );
     });

@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import ReactQuill from 'react-quill';
 import styles from './Chapter.css';
 import arrow from '../../assets/arrow.png';
+import { editChapterByChapterId, destroyChapterById } from '../../actions/chapterActions';
 
-const Chapter = ({ handleSubmit, currentChapterName, currentChapterDescription }) => {
+const Chapter = ({ chapterId, currentChapterName, currentChapterText }) => {
   const [chapterName, setChapterName] = useState(currentChapterName);
-  const [chapterDescription, setChapterDescription] = useState(currentChapterDescription);
+  const [chapterText, setChapterText] = useState(currentChapterText);
   const [hidden, setHidden] = useState(true);
+
+  const dispatch = useDispatch();
+
 
   const formats = [
     'header',
@@ -27,8 +32,13 @@ const Chapter = ({ handleSubmit, currentChapterName, currentChapterDescription }
   };
 
   const onSubmit = event => {
-    event.preventDefault;
-    handleSubmit(chapterName, chapterDescription);
+    event.preventDefault();
+    dispatch(editChapterByChapterId(chapterId, chapterName, chapterText));
+  };
+
+  const handleDelete = event => {
+    event.preventDefault();
+    dispatch(destroyChapterById(chapterId));
   };
 
   const toggle = () => {
@@ -40,8 +50,9 @@ const Chapter = ({ handleSubmit, currentChapterName, currentChapterDescription }
       <img src={arrow} onClick={toggle} />
       {hidden ? <h2>{chapterName}</h2> : <form onSubmit={onSubmit}>
         <input type="text" value={chapterName} onChange={({ target }) => setChapterName(target.value)} required />
-        <ReactQuill value={chapterDescription} onChange={(value) => setChapterDescription(value)} formats={formats} modules={modules} />
+        <ReactQuill value={chapterText} onChange={(value) => setChapterText(value)} formats={formats} modules={modules} />
         <button>DONE</button>
+        <button onClick={handleDelete} value="button">DELETE</button>
       </form>}
     </div>
   );
@@ -50,7 +61,8 @@ const Chapter = ({ handleSubmit, currentChapterName, currentChapterDescription }
 Chapter.propTypes = {
   handleSubmit: PropTypes.func,
   currentChapterName: PropTypes.string,
-  currentChapterDescription: PropTypes.string
+  currentChapterText: PropTypes.string,
+  chapterId: PropTypes.string.isRequired
 };
 
 export default Chapter;

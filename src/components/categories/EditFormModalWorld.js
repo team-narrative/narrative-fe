@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
-// import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import ReactQuill from 'react-quill';
 import styles from '../../containers/default-view/DefaultView-Modal.css';
+import { createWorld } from '../../actions/worldActions';
+import { getCurrentStoryId } from '../../selectors/storySelectors';
 
 const EditFormModalWorld = ({ hideModal, show }) => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const worldStoryId = useSelector(state => getCurrentStoryId(state));
 
-  const [heading, setHeading] = useState('');
-  const [description, setDescription] = useState('');
+  const [worldName, setWorldName] = useState('');
+  const [worldDescription, setWorldDescription] = useState('');
+  const [redirect, setRedirect] = useState(false);
 
   const formats = [
     'header',
@@ -27,11 +32,18 @@ const EditFormModalWorld = ({ hideModal, show }) => {
     ],
   };
 
+  if(redirect) return <Redirect to="/worlds" />;
+
+  const handleChange = ({ target }) => {
+    setWorldName(target.value);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    // dispatch(createWorld(heading, description));
-    setHeading('');
-    setDescription('');
+    dispatch(createWorld(worldStoryId, worldName, worldDescription));
+    setWorldName('');
+    setWorldDescription('');
+    setRedirect(true);
   };
 
   return (
@@ -39,8 +51,8 @@ const EditFormModalWorld = ({ hideModal, show }) => {
       <div className={show ? styles.displayBlock : styles.displayNone} >
         <section className={styles.modalMain} >
           <form onSubmit={handleSubmit}>
-            Name:<input type="text" value={heading} placeholder="Write Name or Title" onChange={({ target }) => setHeading(target.value)} required />
-            Description:<ReactQuill value={description} onChange={(value) => setDescription(value)} formats={formats} modules={modules} />
+            Name:<input type="text" value={worldName} placeholder="Write Name or Title" onChange={handleChange} required />
+            Description:<ReactQuill value={worldDescription} onChange={(value) => setWorldDescription(value)} formats={formats} modules={modules} />
             <button value="button" onClick={hideModal}>Submit</button>
           </form>
           <button onClick={hideModal}>✗</button>
