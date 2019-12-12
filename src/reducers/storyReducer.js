@@ -22,7 +22,9 @@ export default function reducer(state = initialState, action) {
         return story._id === action.payload._id ? action.payload : story;
       }) };
     case DESTROY_STORY_BY_ID:
-      return { ...state, stories: [...state.stories.slice(0, action.payload)] };
+      return { ...state, stories: state.stories.filter((chapter) => {
+        return chapter._id !== action.payload._id;
+      }) };
     default:
       return state;
   }

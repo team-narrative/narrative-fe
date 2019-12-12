@@ -8,10 +8,10 @@ import NewStory from '../categories/NewStory';
 import { getCurrentStory } from '../../selectors/storySelectors';
 
 const Sidebar = ({ stories, userName, userImage }) => {
-
   const currentStory = useSelector(state => getCurrentStory(state));
   const currentStoryTitle = currentStory.storyTitle;
   const currentStorySynopsis = currentStory.storySynopsis;
+  localStorage.setItem('storyId', currentStory._id);
 
   return (
     <aside className={styles.Sidebar}>
