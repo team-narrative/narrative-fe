@@ -10,4 +10,8 @@
     align-items: center;
     padding: 50px;
   }
+
+  img {
+    border-radius: 50%;
+  }
 }
