@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link }  from 'react-router-dom';
 import styles from './LandingPage.css';
-import logo from './narrative-logo.png';
+import logo from './nar_splash_clean.png';
 
 const LandingPage = () => {
 
