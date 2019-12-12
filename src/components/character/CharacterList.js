@@ -5,6 +5,9 @@ import Character from './Character';
 import { getCurrentStoryId } from '../../selectors/storySelectors';
 import { fetchCharactersByStoryId } from '../../actions/characterActions';
 import { getCurrentStoryCharacters } from '../../selectors/characterSelectors';
+import styles from './CharacterList.css';
+import Header from '../header/Header';
+import Footer from '../footer/Footer';
 
 const CharacterList = () => {
   const storyId = useSelector(state => getCurrentStoryId(state));
@@ -27,11 +30,15 @@ const CharacterList = () => {
   }
 
   return (
-    <div>
-      <h2>Characters</h2>
-      <ul>
-        {storyCharacters}
-      </ul>
+    <div className={styles.ListContainer}>
+      <Header />
+      <div className={styles.CharacterList}>
+        <h2>Characters</h2>
+        <ul>
+          {storyCharacters}
+        </ul>
+      </div>
+      <Footer />
     </div>
   );
 };

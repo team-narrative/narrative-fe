@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import DefaultViewModal from '../../containers/default-view/DefaultView-Modal';
+import styles from './NewStory.css';
 
 const NewStory = () => {
 
@@ -15,10 +16,10 @@ const NewStory = () => {
   };
 
   return (
-    <section>
+    <section className={styles.NewStory}>
       <div>
         <DefaultViewModal show={show} hideModal={hideModal} />
-        <button type='button' onClick={showModal}>New Story</button>
+        <button className={styles.NewStoryButton} type='button' onClick={showModal}>New Story</button>
       </div>
     </section>
   );

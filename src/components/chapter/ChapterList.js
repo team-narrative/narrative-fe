@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Chapter from './Chapter';
+import Header from '../header/Header';
+import Footer from '../footer/Footer';
 
 const ChapterList = ({ chapters }) => {
   let storyChapters;
@@ -8,19 +10,23 @@ const ChapterList = ({ chapters }) => {
     storyChapters = chapters.map((chapter, i) => {
       return (
         <li key={chapter._id || i}>
-          <Chapter currentChapterName={chapter.chapterName} currentChapterDescription={chapter.chapterDescription}/>
+          <Chapter currentChapterName={chapter.chapterName} currentChapterDescription={chapter.chapterDescription} />
         </li>
       );
     });
   }
 
   return (
-    <div>
-      <h2>Chapters</h2>
-      <ul>
-        {storyChapters}
-      </ul>
-    </div>
+    <>
+      <Header />
+      <div>
+        <h2>Chapters</h2>
+        <ul>
+          {storyChapters}
+        </ul>
+      </div>
+      <Footer />
+    </>
   );
 };
 
