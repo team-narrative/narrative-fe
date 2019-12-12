@@ -15,7 +15,7 @@ const DefaultView = () => {
 
   return (
     <div>
-      <p>Start A New Story</p>
+      <p></p>
 
       <form onSubmit={handleSubmit}>
         <input placeholder="title" type="text" value={title} onChange={({ target }) => setTitle(target.value)}></input>
