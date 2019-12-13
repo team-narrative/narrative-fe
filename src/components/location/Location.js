@@ -32,6 +32,7 @@ const Location = ({ locationId, currentLocationName, currentLocationDescription 
   const onSubmit = event => {
     event.preventDefault();
     dispatch(editLocationByLocationId(locationId, locationName, locationDescription));
+    toggle();
   };
 
   const handleDelete = event => {
@@ -59,7 +60,7 @@ const Location = ({ locationId, currentLocationName, currentLocationDescription 
           <form className={styles.Form} onSubmit={onSubmit}>
             Name: <input type="text" value={locationName} onChange={({ target }) => setLocationName(target.value)} required />
             <p>Description: </p><ReactQuill value={locationDescription} onChange={(value) => setLocationDescription(value)} formats={formats} modules={modules} />
-            <button onClick={toggle}>Done</button>
+            <button>Done</button>
             <button onClick={handleDelete} value="button">Delete</button>
           </form>
         </div>
