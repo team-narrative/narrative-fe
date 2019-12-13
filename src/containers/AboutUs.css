@@ -1,5 +1,16 @@
 @media screen and (max-width: 640px) {
-  
+  .AboutUs {
+    header {
+      background-color: yellow;
+      padding: 5px;
+    }
+
+    footer {
+      background-color: yellow;
+      text-align: center;
+      padding: 5px;
+    }
+  }
 }
 @media screen and (min-width: 641px) and (max-width: 1007px) {
   .AboutUs {
