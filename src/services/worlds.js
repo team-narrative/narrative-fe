@@ -1,6 +1,6 @@
 import { post, get, put, del } from './request';
 
-const WORLDS_URL = 'http://localhost:7891/api/v1/worlds';
+const WORLDS_URL = 'https://team-narrative.herokuapp.com/api/v1/worlds';
 
 export const postWorldsByStoryId = (worldStoryId, worldName, worldDescription, worldTags) => post(`${WORLDS_URL}/${worldStoryId}`,
   {
