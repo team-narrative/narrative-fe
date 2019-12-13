@@ -16,7 +16,7 @@ const LandingPage = () => {
         <Link to={'/stories'}>Click To Get Started</Link>
         <div>
           <p>
-          Narrative is a full-stack application designed to help storytellers, story writers, screenwriters, novelists, and others keep track of their ideas! Whether you’re building new stories, developing characters, chapters, worlds, or locations, Narrative is a safe place to store your ideas and organize your thoughts.
+          Narrative is a creative tool designed to help storytellers, story writers, screenwriters, novelists, and others keep track of their ideas! Whether you’re building new stories, developing characters, chapters, worlds, or locations, Narrative is a safe place to store your ideas and organize your thoughts.
           </p>
         </div>
       </section>
