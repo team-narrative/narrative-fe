@@ -3,7 +3,8 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 18vh;
+    height: 20vh;
+    background-color: #251A18;
   }
 }
 @media screen and (min-width: 641px) and (max-width: 1007px) {
