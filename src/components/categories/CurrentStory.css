@@ -1,59 +1,174 @@
-.CurrentStory {
-  display: flex;
-  height: 20%;
-  font-family: 'Roboto', sans-serif;
-}
-
-.CurrentStoryContainer {
-  font-family: 'Roboto', sans-serif;
-  text-transform: uppercase;
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  margin: 1%;
-  justify-content: space-between;
-  padding: 2px;
-
-  h2 {
-    font-size: 1em;
-    font-weight: 500;
+@media screen and (max-width: 640px) {
+  .CurrentStory {
+    display: flex;
+    height: 20vh;
+    margin-bottom: 5px;
   }
-}
 
-.SynopsisContainer {
-  font-family: 'Roboto', sans-serif;
-  width: 70%;
-  display: flex;
-  justify-content: center;
-  overflow: scroll;
-  
-  p {
-    background-color: #a1bbbb;
-    margin: 5px;
-    width: 90%;
-    height: 30%;
+  .CurrentStoryContainer {
+    background-color: white;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 10px;
+    justify-content: space-between;
     padding: 15px;
-    align-self: center;
-    color: darkslategray;
     overflow: scroll;
+    border-radius: 5px;
+  
+    h2 {
+      font-size: 1em;
+    }
+  }
+
+  .SynopsisContainer {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    
+    p {
+      background-color: #fff;
+      width: 90%;
+      height: 80%;
+      padding: 5px;
+      align-self: center;
+      border-radius: 5px;
+      overflow: scroll;
+    }
+  }
+  .CurrentStoryButton {
+    width: 80px;
+    align-self: center;
+    padding: 5px;
+    border-style: none;
+    border-radius: 5px;
+    background-color: palegoldenrod;
+  }
+  
+  .CurrentStoryButton:hover {
+    background-color: pink;
   }
 }
-
-.CurrentStoryButton {
-  font-family: 'Roboto', sans-serif;
-  text-transform: uppercase;
-  width: 80px;
-  align-self: left;
-  padding: 5px;
-  color: white;
-  transition: all ease-in .1s;
-  background-color: #9E221A;
-  border: 1px solid #a0a0a0;
-  cursor: pointer;
+@media screen and (min-width: 641px) and (max-width: 1007px) {
+  .CurrentStory {
+    display: flex;
+    height: 20%;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .CurrentStoryContainer {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 1%;
+    justify-content: space-between;
+    padding: 2px;
+  
+    h2 {
+      font-size: 1em;
+      font-weight: 500;
+    }
+  }
+  
+  .SynopsisContainer {
+    font-family: 'Roboto', sans-serif;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    overflow: scroll;
+    
+    p {
+      background-color: #a1bbbb;
+      margin: 5px;
+      width: 90%;
+      height: 30%;
+      padding: 15px;
+      align-self: center;
+      color: darkslategray;
+      overflow: scroll;
+    }
+  }
+  
+  .CurrentStoryButton {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    width: 80px;
+    align-self: left;
+    padding: 5px;
+    color: white;
+    transition: all ease-in .1s;
+    background-color: #9E221A;
+    border: 1px solid #a0a0a0;
+    cursor: pointer;
+  }
+  
+  .CurrentStoryButton:hover {
+    background-color: #671b16;
+    transform: scale(1.05);
+  }
 }
-
-.CurrentStoryButton:hover {
-  background-color: #671b16;
-  transform: scale(1.05);
+@media screen and (min-width: 1008px) {
+  .CurrentStory {
+    display: flex;
+    height: 20%;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .CurrentStoryContainer {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 1%;
+    justify-content: space-between;
+    padding: 2px;
+  
+    h2 {
+      font-size: 1em;
+      font-weight: 500;
+    }
+  }
+  
+  .SynopsisContainer {
+    font-family: 'Roboto', sans-serif;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    overflow: scroll;
+    
+    p {
+      background-color: #a1bbbb;
+      margin: 5px;
+      width: 90%;
+      height: 30%;
+      padding: 15px;
+      align-self: center;
+      color: darkslategray;
+      overflow: scroll;
+    }
+  }
+  
+  .CurrentStoryButton {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    width: 80px;
+    align-self: left;
+    padding: 5px;
+    color: white;
+    transition: all ease-in .1s;
+    background-color: #9E221A;
+    border: 1px solid #a0a0a0;
+    cursor: pointer;
+  }
+  
+  .CurrentStoryButton:hover {
+    background-color: #671b16;
+    transform: scale(1.05);
+  }
 }
