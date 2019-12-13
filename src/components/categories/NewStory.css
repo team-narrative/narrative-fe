@@ -1,23 +1,28 @@
 .NewStory {
   margin-top: 10px;
-  font-weight: bold;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #5c5250;
+  p {
+    text-transform: uppercase;
+    color: #A0A0A0;
+  }
 }
 
 .NewStoryButton {
-  width: 70%;
+  width: 50%;
   margin-top: 10px;
-  border-style: none;
   background-color: #9E221A;
+  border: 1px solid #a0a0a0;
   font-size: .9em;
   color: white;
   text-transform: uppercase;
-  border-radius: 5px;
   padding: 5px;
   transition: all ease-in .1s;
 }
 
 .NewStoryButton:hover {
-  background-color: #247E7F;
+  background-color: #671b16;
   transform: scale(1.05);
   cursor: pointer;
 }

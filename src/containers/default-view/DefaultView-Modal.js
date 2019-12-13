@@ -17,8 +17,8 @@ const DefaultViewModal = ({ hideModal, show }) => {
   };
 
   return (
-    <div className={styles.ParentFlex}>
-      <p>Start A New Story</p>
+    <div className={styles.DefaultViewModal}>
+      <p>Start a New Story</p>
 
       <div className={show ? styles.displayBlock : styles.displayNone}>
         <section className={styles.modalMain}>

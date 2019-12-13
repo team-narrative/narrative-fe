@@ -15,12 +15,12 @@
   justify-items: center;
   align-content: center;
   border-radius: 10px;
-
+  
   form {
     display: flex;
     flex-direction: column;
   }
-
+  
   p {
     display: inline;
     margin-left: 10px;
