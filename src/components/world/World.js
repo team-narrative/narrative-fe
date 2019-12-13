@@ -59,8 +59,8 @@ const World = ({ worldId, currentWorldName, currentWorldDescription }) => {
           <form className={styles.Form} onSubmit={onSubmit}>
             Name/Title: <input type="text" value={worldName} onChange={({ target }) => setWorldName(target.value)} required />
             <p>Description: </p><ReactQuill value={worldDescription} onChange={(value) => setWorldDescription(value)} formats={formats} modules={modules} />
-            <button onClick={toggle}>Done</button>
-            <button onClick={handleDelete} value="button">Delete</button>
+            <button className={styles.Buttons} onClick={toggle}>Done</button>
+            <button className={styles.Buttons} onClick={handleDelete} value="button">Delete</button>
           </form>
         </div>
       }

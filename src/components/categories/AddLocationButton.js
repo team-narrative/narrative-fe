@@ -6,7 +6,9 @@ const AddLocationButton = ({ show, hideModal, showModal }) => {
   return (
     <>
       <EditFormModalLocation show={show} hideModal={hideModal}></EditFormModalLocation>
-      <button type='button' onClick={showModal}>⊕</button>
+      <div>
+        <button type='button' onClick={showModal}>Add New</button>
+      </div>
     </>
   );
 };
