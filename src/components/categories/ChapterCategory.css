@@ -1,11 +1,11 @@
 .ChapterCategory {
-  background-color: #ccc;
+  background-image: url('./chapters.jpg');
+  background-size: cover;
   width: 50%;
   display: flex;
+  font-family: 'Roboto', sans-serif;
   flex-direction: column;
   justify-content: center;
-  border-right: 1px solid black;
-  border-top: 1px solid black;
   margin-right: 2%;
 
   h2, div {
@@ -20,3 +20,11 @@
   align-items: center;
   justify-content: center;
 }
+
+.h2 {
+  align-self: center;
+  font-size: 2.5em;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  text-transform: uppercase;
+} 
