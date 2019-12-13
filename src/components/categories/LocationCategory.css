@@ -1,11 +1,20 @@
 @media screen and (max-width: 640px) {
   .LocationCategory {
-    background-color: #ccc;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    height: 40px;
+    height: 12vh;
     margin-bottom: 5px;
+    background-image: url('./chapters.jpg');
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+
+    .h2 {
+      font-size: 1.7em;
+      color: #fff;
+      text-shadow: 1px 1px 1px #000;
+      text-transform: uppercase;
+    }
   }
 }
 @media screen and (min-width: 641px) and (max-width: 1007px) {
