@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import ReactQuill from 'react-quill';
 import styles from './Character.css';
-// import arrow from '../../assets/arrow.png';
 import { editCharacterByCharacterId, destroyCharacterById } from '../../actions/characterActions';
 
 const Character = ({ characterId, currentName, currentDescription }) => {

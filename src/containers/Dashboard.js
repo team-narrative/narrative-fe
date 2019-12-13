@@ -11,9 +11,9 @@ import { fetchStoryList } from '../actions/storyActions';
 import { useSession } from '../Auth0Provider';
 import styles from './Dashboard.css';
 import Footer from '../components/footer/Footer';
+import DefaultViewModal from './default-view/DefaultView-Modal';
 
 const Dashboard = () => {
-  
   const stories = useSelector(state => getStoryList(state));
   const currentStory = useSelector(state => getCurrentStory(state));
   const userName = useSelector(state => getUserName(state));
@@ -27,6 +27,7 @@ const Dashboard = () => {
   const [show2, setShow2] = useState(false);
   const [show3, setShow3] = useState(false);
   const [show4, setShow4] = useState(false);
+  const [show5, setShow5] = useState(false);
 
   const showModal1 = () => {
     setShow1(true);
@@ -60,6 +61,14 @@ const Dashboard = () => {
     setShow4(false);
   };
 
+  const showModal5 = () => {
+    setShow5(true);
+  };
+
+  const hideModal5 = () => {
+    setShow5(false);
+  };
+
   useEffect(() => {
     if(!loading && isAuthenticated)
       dispatch(fetchStoryList());
@@ -68,7 +77,12 @@ const Dashboard = () => {
   return (
 
     <>
-      <div className={styles.Dashboard}>
+      {stories.length === 0 ? <section className={styles.NewStory}>
+        <div>
+          <DefaultViewModal show={show5} hideModal={hideModal5} />
+          <button className={styles.NewStoryButton} type='button' onClick={showModal5}>New Story</button>
+        </div>
+      </section> : <div className={styles.Dashboard}>
         <Sidebar stories={stories} userName={userName} userImage={userImage} />
 
         <main>
@@ -84,7 +98,7 @@ const Dashboard = () => {
             <WorldCategory show={show4} hideModal={hideModal4} showModal={showModal4} />
           </div>
         </main>
-      </div>
+      </div>}
       <Footer />
     </>
 
