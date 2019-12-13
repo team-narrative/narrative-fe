@@ -23,7 +23,6 @@ const DefaultViewModal = ({ hideModal, show }) => {
       <div className={show ? styles.displayBlock : styles.displayNone}>
         <section className={styles.modalMain}>
           <form onSubmit={handleSubmit}>
-            <h1>Add A New Story:</h1>
             <div>
               <p></p><input placeholder="title" type="text" value={title} onChange={({ target }) => setTitle(target.value)}></input>
               <br></br>

@@ -10,6 +10,7 @@ import { getStoryList, getUserName, getUserImage, getCurrentStory } from '../sel
 import { fetchStoryList } from '../actions/storyActions';
 import { useSession } from '../Auth0Provider';
 import styles from './Dashboard.css';
+import secondStyle from './noStory.css';
 import Footer from '../components/footer/Footer';
 import DefaultViewModal from './default-view/DefaultView-Modal';
 
@@ -78,9 +79,10 @@ const Dashboard = () => {
 
     <>
       {stories.length === 0 ? <section className={styles.NewStory}>
-        <div>
+        <div className={
+          secondStyle.CenterMe}>
           <DefaultViewModal show={show5} hideModal={hideModal5} />
-          <button className={styles.NewStoryButton} type='button' onClick={showModal5}>New Story</button>
+          <button name="no-story" className={styles.NewStoryButton} type='button' onClick={showModal5}>New Story</button>
         </div>
       </section> : <div className={styles.Dashboard}>
         <Sidebar stories={stories} userName={userName} userImage={userImage} />
