@@ -4,7 +4,7 @@ export const setToken = newToken => {
 };
 
 export const postStory = (story, description) => {
-  return fetch(`${process.env.API_URL}/api/v1/stories`, {
+  return fetch('https://team-narrative.herokuapp.com/api/v1/stories', {
     method: 'POST',
     body: JSON.stringify({ story, description }),
     headers: {
