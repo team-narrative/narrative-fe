@@ -12,7 +12,9 @@ exports[`ChapterCategory component renders a chapter category 1`] = `
   <div
     className="ChapterCategoryContainer"
   >
-    <AddChapterButton />
+    <div>
+      <AddChapterButton />
+    </div>
     <ViewAllButton
       handleViewClick={[Function]}
     />

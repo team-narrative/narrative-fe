@@ -12,13 +12,15 @@ const ChapterCategory = ({ show, hideModal, showModal }) => {
   const handleViewChapters = () => {
     setRedirect(true);
   };
-  
+
   return (
     <section className={styles.ChapterCategory}>
       <h2 className={styles.h2}>Chapters</h2>
 
       <div className={styles.ChapterCategoryContainer}>
-        <AddChapterButton show={show} hideModal={hideModal} showModal={showModal} />
+        <div>
+          <AddChapterButton show={show} hideModal={hideModal} showModal={showModal} />
+        </div>
         <ViewAllButton handleViewClick={handleViewChapters} />
       </div>
     </section>
