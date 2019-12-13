@@ -16,7 +16,7 @@ const AboutUs = () => {
       </div>
 
       <div className={styles.AboutUsContainer}>
-        <AboutDeveloperCard developerName="Ollie Hill" developerImage="src/assets/ollie-portrait.png" developerBio="Ollie is a software developer who’s passionate about the ways in which technology and storytelling can combine to create compelling narratives."/>
+        <AboutDeveloperCard developerName="Ollie Comet" developerImage="src/assets/ollie-portrait.png" developerBio="Ollie is a software developer who’s passionate about the ways in which technology and storytelling can combine to create compelling narratives."/>
         <AboutDeveloperCard developerName="Alex Spencer" developerImage="src/assets/alex-pic.png" developerBio="Full Stack Software Developer who made a recent pivot from a career in institutional investment consulting and asset management. Organized, detail-oriented, and passionate about technology, with strong interpersonal and crossfunctional communication skills. I love challenging myself to learn new things, problem solve, and innovate. Avid Portland Timbers (RCTID) and Arsenal FC (COYG) supporter." />
       </div>
 
