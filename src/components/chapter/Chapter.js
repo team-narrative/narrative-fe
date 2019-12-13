@@ -10,9 +10,7 @@ const Chapter = ({ chapterId, currentChapterName, currentChapterText }) => {
   const [chapterText, setChapterText] = useState(currentChapterText);
   const [arrow, setArrow] = useState(true);
   const [hidden, setHidden] = useState(true);
-
   const dispatch = useDispatch();
-
 
   const formats = [
     'header',
@@ -71,7 +69,6 @@ const Chapter = ({ chapterId, currentChapterName, currentChapterText }) => {
 };
 
 Chapter.propTypes = {
-  handleSubmit: PropTypes.func,
   currentChapterName: PropTypes.string,
   currentChapterText: PropTypes.string,
   chapterId: PropTypes.string.isRequired

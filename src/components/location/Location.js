@@ -3,14 +3,13 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import ReactQuill from 'react-quill';
 import styles from './Location.css';
-import arrow from '../../assets/arrow.png';
 import { editLocationByLocationId, destroyLocationById } from '../../actions/locationActions';
 
 const Location = ({ locationId, currentLocationName, currentLocationDescription }) => {
-  console.log(locationId);
   const [locationName, setLocationName] = useState(currentLocationName);
   const [locationDescription, setLocationDescription] = useState(currentLocationDescription);
   const [hidden, setHidden] = useState(true);
+  const [arrow, setArrow] = useState(true);
   const dispatch = useDispatch();
 
   const formats = [
@@ -42,18 +41,30 @@ const Location = ({ locationId, currentLocationName, currentLocationDescription 
 
   const toggle = () => {
     setHidden(!hidden);
+    setArrow(!arrow);
   };
 
   return (
     <div className={styles.Location}>
-      <img src={arrow} onClick={toggle} />
-      {hidden ? <h2>{locationName}</h2> : <form onSubmit={onSubmit}>
-        <input type="text" value={locationName} onChange={({ target }) => setLocationName(target.value)} required />
-        <ReactQuill value={locationDescription} onChange={(value) => setLocationDescription(value)} formats={formats} modules={modules} />
-        <button>DONE</button>
-        <button onClick={handleDelete} value="button">DELETE</button>
-      </form>}
-    </div>
+      {hidden ?
+        <div className={styles.HiddenEditBox}>
+          <h1 onClick={toggle}>►</h1>
+          <h3>{locationName}</h3>
+        </div>
+        :
+        <div>
+          <div className={styles.OpenEditBox}>
+            <h1 onClick={toggle}>▼</h1>
+          </div>
+          <form className={styles.Form} onSubmit={onSubmit}>
+            Name: <input type="text" value={locationName} onChange={({ target }) => setLocationName(target.value)} required />
+            <p>Description: </p><ReactQuill value={locationDescription} onChange={(value) => setLocationDescription(value)} formats={formats} modules={modules} />
+            <button onClick={toggle}>Done</button>
+            <button onClick={handleDelete} value="button">Delete</button>
+          </form>
+        </div>
+      }
+    </div >
   );
 };
 
