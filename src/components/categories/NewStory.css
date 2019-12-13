@@ -4,6 +4,7 @@
     text-align: center;
     padding-top: 15px;
     width: 30vw;
+    align-self: center;
 
     p {
       text-transform: uppercase;

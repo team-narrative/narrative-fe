@@ -25,8 +25,8 @@ const DefaultViewModalEdit = ({ hideModal, show }) => {
       <div className={show ? styles.displayBlock : styles.displayNone}>
         <section className={styles.modalMain}>
           <form onSubmit={handleSubmit}>
-            <p>Story Title ::</p><input placeholder="title" type="text" value={title} onChange={({ target }) => setTitle(target.value)}></input>
-            <p>Story Synopsis ::</p> <input placeholder="synopsis" type="text" value={synopsis} onChange={({ target }) => setSynopsis(target.value)}></input>
+            <p></p><input placeholder="title" type="text" value={title} onChange={({ target }) => setTitle(target.value)}></input>
+            <p></p> <input placeholder="synopsis" type="text" value={synopsis} onChange={({ target }) => setSynopsis(target.value)}></input>
             <button value='button' onClick={hideModal}>Save changes</button>
           </form>
           <button onClick={hideModal}>✗</button>

@@ -52,8 +52,8 @@ const EditFormModalChapter = ({ hideModal, show }) => {
       <div className={show ? styles.displayBlock : styles.displayNone} >
         <section className={styles.modalMain}>
           <form onSubmit={handleSubmit}>
-            Name:<input type="text" value={chapterName} placeholder="Write Name or Title" onChange={handleChange} required />
-            Description:<ReactQuill value={chapterText} onChange={(value) => setChapterText(value)} formats={formats} modules={modules} />
+            <input type="text" value={chapterName} placeholder="Write Name or Title" onChange={handleChange} required />
+            <ReactQuill value={chapterText} onChange={(value) => setChapterText(value)} formats={formats} modules={modules} />
             <button value="button" onClick={hideModal}>Submit</button>
           </form>
           <button onClick={hideModal}>✗</button>
