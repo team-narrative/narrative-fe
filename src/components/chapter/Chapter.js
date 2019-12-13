@@ -32,6 +32,7 @@ const Chapter = ({ chapterId, currentChapterName, currentChapterText }) => {
   const onSubmit = event => {
     event.preventDefault();
     dispatch(editChapterByChapterId(chapterId, chapterName, chapterText));
+    toggle();
   };
 
   const handleDelete = event => {
@@ -59,7 +60,7 @@ const Chapter = ({ chapterId, currentChapterName, currentChapterText }) => {
           <form className={styles.Form} onSubmit={onSubmit}>
             Title: <input type="text" value={chapterName} onChange={({ target }) => setChapterName(target.value)} required />
             <p>Description: </p><ReactQuill value={chapterText} onChange={(value) => setChapterText(value)} formats={formats} modules={modules} />
-            <button onClick={toggle}>Done</button>
+            <button>Done</button>
             <button onClick={handleDelete} value="button">Delete</button>
           </form>
         </div>
