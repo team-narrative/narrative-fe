@@ -3,32 +3,33 @@
     width: 10px;
     height: 10px;
   }
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
   padding: 0px 0px;
 }
 
 .HiddenEditBox {
   background: rgb(169, 191, 214);
-  border: 1px solid black;
-  font-family: Arial, Helvetica, sans-serif;
+  border-bottom: 1px dashed hotpink;
+  font-family: 'Roboto', sans-serif;
   display: flex;
 
   h1 {
-    padding: 5px 5px;
+    padding: 5px;
   }
 
   h3 {
-    padding: 5px 5px;
+    padding: 5px;
   }
 }
 
 .HiddenEditBox:hover {
-  background: rgb(39, 39, 39);
+  background: #251A18;
+  color: #a0a0a0;
   cursor: pointer;
 }
 
 .OpenEditBox {
-  background: rgb(39, 39, 39);
+  background: #251A18;
   
   h1 {
     padding: 5px 5px;
