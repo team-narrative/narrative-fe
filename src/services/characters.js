@@ -1,6 +1,6 @@
 import { post, get, put, del } from './request';
 
-const CHARACTERS_URL = 'https://team-narrative.herokuapp.com/v1/characters';
+const CHARACTERS_URL = 'https://team-narrative.herokuapp.com/api/v1/characters';
 
 export const postCharactersByStoryId = (characterStoryId, characterName, characterDescription, characterTags) => post(`${CHARACTERS_URL}/${characterStoryId}`,
   {
