@@ -25,10 +25,10 @@ const DefaultViewModal = ({ hideModal, show }) => {
           <form onSubmit={handleSubmit}>
             <h1>Add A New Story:</h1>
             <div>
-              <p>Story Title: </p><input placeholder="title" type="text" value={title} onChange={({ target }) => setTitle(target.value)}></input>
+              <p></p><input placeholder="title" type="text" value={title} onChange={({ target }) => setTitle(target.value)}></input>
               <br></br>
               <div className={styles.TextArea}>
-                Story Synopsis: <textarea placeholder="synopsis" type="text" value={synopsis} onChange={({ target }) => setSynopsis(target.value)}></textarea>
+                <input placeholder="synopsis" type="text" value={synopsis} onChange={({ target }) => setSynopsis(target.value)}></input>
               </div>
             </div>
             <button className={styles.SaveButton} value='button' onClick={hideModal}>Save new story</button>

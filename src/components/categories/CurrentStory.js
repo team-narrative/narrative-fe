@@ -29,8 +29,11 @@ const CurrentStory = ({ title, synopsis }) => {
         <h3>Current Story:</h3>
         <h2>{title}</h2>
         <DefaultViewModalEdit show={show} hideModal={hideModal} />
-        <button className={styles.CurrentStoryButton} type='button' onClick={showModal}>Edit Story</button>
-        <button className={styles.CurrentStoryButton} onClick={handleDelete} value="button">DELETE</button>
+
+        <section className={styles.ButtonContainer}>
+          <button className={styles.CurrentStoryButton} type='button' onClick={showModal}>Edit Story</button>
+          <button className={styles.CurrentStoryButton} onClick={handleDelete} value="button">DELETE</button>
+        </section>
       </div>
 
       <div className={styles.SynopsisContainer}>
