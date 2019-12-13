@@ -11,7 +11,6 @@ const DefaultViewModalEdit = ({ hideModal, show }) => {
   const storyId = useSelector(state => getCurrentStoryId(state));
   const [title, setTitle] = useState('');
   const [synopsis, setSynopsis] = useState('');
-  localStorage.setItem('storyId', storyId);
 
   const handleSubmit = (event) => {
     event.preventDefault();
