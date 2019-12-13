@@ -12,7 +12,9 @@ exports[`CharacterCategory component renders a character category 1`] = `
   <div
     className="ChapterCategoryContainer"
   >
-    <AddChapterButton />
+    <div>
+      <AddChapterButton />
+    </div>
     <ViewAllButton
       handleViewClick={[Function]}
     />
