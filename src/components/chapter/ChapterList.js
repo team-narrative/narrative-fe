@@ -6,6 +6,7 @@ import Header from '../header/Header';
 import Footer from '../footer/Footer';
 import { fetchChaptersByStoryId } from '../../actions/chapterActions';
 import { getCurrentStoryChapters } from '../../selectors/chapterSelectors';
+import styles from './ChapterList.css';
 
 const ChapterList = () => {
   const storyId = localStorage.getItem('storyId');
@@ -28,16 +29,16 @@ const ChapterList = () => {
   }
 
   return (
-    <>
+    <div className={styles.ListContainer}>
       <Header />
-      <div>
+      <div className={styles.ChapterList}>
         <h2>Chapters</h2>
         <ul>
           {storyChapters}
         </ul>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 
