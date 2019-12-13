@@ -1,22 +1,61 @@
-.ChapterCategory {
-  background-color: #ccc;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-right: 1px solid black;
-  border-top: 1px solid black;
-  margin-right: 2%;
+@media screen and (max-width: 640px) {
+  .ChapterCategory {
+    background-color: #ccc;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 40px;
+    margin-bottom: 5px;
 
-  h2, div {
-    align-self: center;
+    h2, div {
+      align-self: center;
+    }
+
+    button {
+      background-color: #fff;
+    }
+  }
+}
+@media screen and (min-width: 641px) and (max-width: 1007px) {
+  .ChapterCategory {
+    background-color: #ccc;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50%;
+    margin-bottom: 5px;
+
+    h2, div {
+      align-self: center;
+    }
+
+    button {
+      background-color: #fff;
+    }
+  }
+}
+@media screen and (min-width: 1008px) {
+  .ChapterCategory {
+    background-color: #ccc;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    margin-right: 2%;
+  
+    h2, div {
+      align-self: center;
+    }
+  }
+  
+  .ChapterCategoryContainer {
+    width: 85%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
-.ChapterCategoryContainer {
-  width: 85%;
-  height: 40%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
