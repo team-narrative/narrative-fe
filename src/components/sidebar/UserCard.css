@@ -13,12 +13,14 @@
 
   .LogoImage {
     border-radius: 0;
-    max-width: 80px;
+    max-width: 90px;
+    align-self: center;
   }
 
-  img {
+  .UserImage {
     margin: 8px 0px 5px 0px;
     max-width: 40px;
+    border: 1px solid #9E221A;
     border-radius: 50%;
     align-self: center;
   }
