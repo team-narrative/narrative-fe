@@ -8,8 +8,8 @@
 }
 
 .HiddenEditBox {
-  background: rgb(169, 191, 214);
-  border-bottom: 1px dashed hotpink;
+  background: #a1bbbb;
+  box-shadow: 0px 1px 2px #000;
   font-family: 'Roboto', sans-serif;
   display: flex;
 
@@ -30,9 +30,11 @@
 
 .OpenEditBox {
   background: #251A18;
+  color: #a0a0a0;
   
   h1 {
-    padding: 5px 5px;
+    padding: 5px;
+    
   }
 
   h1:hover{
@@ -42,12 +44,27 @@
 
 .Form {
   padding: 10px 5px;
-
+  border-bottom: 1px solid darkslategray;
   p {
     margin: 10px 0px 10px 0px;
   }
 
   button {
-    margin-top: 10px;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    width: 80px;
+    align-self: left;
+    padding: 5px;
+    color: darkslategray;
+    transition: all ease-in .1s;
+    background-color: #fff;
+    border: 1px solid lightgrey;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  button:hover {
+    background-color: #a1bbbb;
+    transform: scale(1.05);
   }
 }
