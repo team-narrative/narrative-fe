@@ -1,6 +1,6 @@
 import { post, get, put, del } from './request';
 
-const STORIES_URL = 'http://localhost:7891/api/v1/stories';
+const STORIES_URL = 'https://team-narrative.herokuapp.com/api/v1/stories';
 
 export const postStory = (storyTitle, storySynopsis) => post(`${STORIES_URL}`,
   {
