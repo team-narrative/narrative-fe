@@ -18,9 +18,9 @@ const AboutDeveloperCard = ({ developerName, developerImage, developerBio }) => 
 };
 
 AboutDeveloperCard.propTypes = {
-  developerName: PropTypes.string.isRequired,
-  developerImage: PropTypes.string.isRequired,
-  developerBio: PropTypes.string.isRequired
+  developerName: PropTypes.string,
+  developerImage: PropTypes.string,
+  developerBio: PropTypes.string
 };
 
 export default AboutDeveloperCard;
