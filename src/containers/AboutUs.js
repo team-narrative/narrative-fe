@@ -2,13 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import AboutDeveloperCard from '../components/about-us/AboutDeveloperCard';
 import styles from './AboutUs.css';
+import Header from '../components/header/Header';
 
 const AboutUs = () => {
   return (
     <section className={styles.AboutUs}>
-      <header>
+      <Header />
+      {/* <header>
         <Link to={'/stories'}>Back</Link>
-      </header>
+      </header> */}
 
       <div className={styles.AboutUsContainer}>
         <AboutDeveloperCard developerName="Donna Lambert" developerImage="src/assets/donna.jpg" developerBio="Donna is a constantly curious full-stack JavaScript developer. She is passionate about technology and problem-solving, and is always seeking new ways to learn and improve."/>
