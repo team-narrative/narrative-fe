@@ -33,6 +33,7 @@ const Character = ({ characterId, currentName, currentDescription }) => {
   const onSubmit = event => {
     event.preventDefault();
     dispatch(editCharacterByCharacterId(characterId, name, description));
+    toggle();
   };
 
   const handleDelete = event => {
@@ -44,7 +45,7 @@ const Character = ({ characterId, currentName, currentDescription }) => {
     setHidden(!hidden);
     setArrow(!arrow);
   };
-
+  
   return (
     <div className={styles.Character}>
       {hidden ?
@@ -60,8 +61,8 @@ const Character = ({ characterId, currentName, currentDescription }) => {
           <form className={styles.Form} onSubmit={onSubmit}>
             Name: <input type="text" value={name} onChange={({ target }) => setName(target.value)} required />
             <p>Description: </p><ReactQuill value={description} onChange={(value) => setDescription(value)} formats={formats} modules={modules} />
-            <button onClick={toggle}>Done</button>
-            <button onClick={handleDelete} value="button">Delete</button>
+            <button>Done</button>
+            <button onClick={handleDelete} type="button">Delete</button>
           </form>
         </div>
       }
