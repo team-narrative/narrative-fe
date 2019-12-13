@@ -32,6 +32,7 @@ const World = ({ worldId, currentWorldName, currentWorldDescription }) => {
   const onSubmit = event => {
     event.preventDefault();
     dispatch(editWorldByWorldId(worldId, worldName, worldDescription));
+    toggle();
   };
 
   const handleDelete = event => {
@@ -59,7 +60,7 @@ const World = ({ worldId, currentWorldName, currentWorldDescription }) => {
           <form className={styles.Form} onSubmit={onSubmit}>
             Name/Title: <input type="text" value={worldName} onChange={({ target }) => setWorldName(target.value)} required />
             <p>Description: </p><ReactQuill value={worldDescription} onChange={(value) => setWorldDescription(value)} formats={formats} modules={modules} />
-            <button className={styles.Buttons} onClick={toggle}>Done</button>
+            <button className={styles.Buttons}>Done</button>
             <button className={styles.Buttons} onClick={handleDelete} value="button">Delete</button>
           </form>
         </div>
