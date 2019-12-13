@@ -6,7 +6,9 @@ const AddCharacterButton = ({ show, hideModal, showModal }) => {
   return (
     <>
       <EditFormModalCharacter show={show} hideModal={hideModal}></EditFormModalCharacter>
-      <button type='button' onClick={showModal}>⊕</button>
+      <div>
+        <button type='button' onClick={showModal}>Add New</button>
+      </div>
     </>
   );
 };
