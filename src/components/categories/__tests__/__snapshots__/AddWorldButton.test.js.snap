@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AddWorldButton component renders an add button 1`] = `
-<div
-  className="AddWorldButton"
->
+<Fragment>
   <EditFormModalWorld />
-  <button
-    type="button"
-  >
-    ⊕
-  </button>
-</div>
+  <div>
+    <button
+      type="button"
+    >
+      Add New
+    </button>
+  </div>
+</Fragment>
 `;

@@ -3,10 +3,12 @@
 exports[`AddCharacterButton component renders an add button 1`] = `
 <Fragment>
   <EditFormModalCharacter />
-  <button
-    type="button"
-  >
-    ⊕
-  </button>
+  <div>
+    <button
+      type="button"
+    >
+      Add New
+    </button>
+  </div>
 </Fragment>
 `;
