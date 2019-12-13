@@ -18,8 +18,31 @@
   h2 {
     font-size: 1em;
     font-weight: 500;
+
+@media screen and (max-width: 640px) {
+  .CurrentStory {
+    display: flex;
+    height: 20vh;
+    margin-bottom: 5px;
   }
-}
+
+  .CurrentStoryContainer {
+    background-color: white;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 10px;
+    justify-content: space-between;
+    padding: 15px;
+    overflow: scroll;
+    border-radius: 5px;
+  
+    h2 {
+      font-size: 1em;
+    }
+
+  }
 
 .SynopsisContainer {
   font-family: 'Roboto', sans-serif;
@@ -57,4 +80,103 @@
 .CurrentStoryButton:hover {
   background-color: #671b16;
   transform: scale(1.05);
+
+@media screen and (min-width: 641px) and (max-width: 1007px) {
+  .CurrentStory {
+    display: flex;
+    height: 20%;
+    background-color: pink;
+  }
+  
+  .CurrentStoryContainer {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 1%;
+    justify-content: space-between;
+    padding: 20px;
+  
+    h2 {
+      font-size: 1.5em;
+    }
+  }
+  
+  .SynopsisContainer {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    overflow: scroll;
+    
+    p {
+      background-color: #fff;
+      width: 90%;
+      height: 80%;
+      padding: 5px;
+      align-self: center;
+      border-radius: 5px;
+    }
+  }
+  
+  .CurrentStoryButton {
+    width: 80px;
+    align-self: center;
+    padding: 5px;
+    border-style: none;
+    border-radius: 5px;
+    background-color: palegoldenrod;
+  }
+  
+  .CurrentStoryButton:hover {
+    background-color: pink;
+  }
+}
+@media screen and (min-width: 1008px) {
+  .CurrentStory {
+    display: flex;
+    height: 20%;
+  }
+  
+  .CurrentStoryContainer {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 1%;
+    justify-content: space-between;
+    padding: 20px;
+  
+    h2 {
+      font-size: 1.5em;
+    }
+  }
+  
+  .SynopsisContainer {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    overflow: scroll;
+    
+    p {
+      background-color: #fff;
+      width: 90%;
+      height: 80%;
+      padding: 5px;
+      align-self: center;
+      border-radius: 5px;
+    }
+  }
+  
+  .CurrentStoryButton {
+    width: 80px;
+    align-self: center;
+    padding: 5px;
+    border-style: none;
+    border-radius: 5px;
+    background-color: palegoldenrod;
+  }
+  
+  .CurrentStoryButton:hover {
+    background-color: pink;
+  }
 }

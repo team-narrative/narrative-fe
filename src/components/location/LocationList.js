@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 import Location from './Location';
 import { fetchLocationsByStoryId } from '../../actions/locationActions';
 import { getCurrentStoryLocations } from '../../selectors/locationSelectors';
+import Header from '../header/Header';
+import Footer from '../footer/Footer';
+import styles from './LocationList.css';
 
 const LocationList = () => {
   const storyId = localStorage.getItem('storyId');
@@ -26,11 +29,15 @@ const LocationList = () => {
   }
 
   return (
-    <div>
-      <h2>Locations</h2>
-      <ul>
-        {storyLocations}
-      </ul>
+    <div className={styles.ListContainer}>
+      <Header />
+      <div className={styles.LocationList}>
+        <h2>Locations</h2>
+        <ul>
+          {storyLocations}
+        </ul>
+      </div>
+      <Footer />
     </div>
   );
 };

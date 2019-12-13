@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddCharacterButton component renders an add button 1`] = `
+<Fragment>
+  <EditFormModalCharacter />
+  <button
+    type="button"
+  >
+    ⊕
+  </button>
+</Fragment>
+`;

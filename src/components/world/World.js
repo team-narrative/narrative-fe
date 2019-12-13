@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import ReactQuill from 'react-quill';
 import styles from './World.css';
-import arrow from '../../assets/arrow.png';
 import { editWorldByWorldId, destroyWorldById } from '../../actions/worldActions';
 
 const World = ({ worldId, currentWorldName, currentWorldDescription }) => {
   const [worldName, setWorldName] = useState(currentWorldName);
   const [worldDescription, setWorldDescription] = useState(currentWorldDescription);
   const [hidden, setHidden] = useState(true);
+  const [arrow, setArrow] = useState(true);
   const dispatch = useDispatch();
 
   const formats = [
@@ -41,17 +41,29 @@ const World = ({ worldId, currentWorldName, currentWorldDescription }) => {
 
   const toggle = () => {
     setHidden(!hidden);
+    setArrow(!arrow);
   };
 
   return (
     <div className={styles.World}>
-      <img src={arrow} onClick={toggle} />
-      {hidden ? <h2>{worldName}</h2> : <form onSubmit={onSubmit}>
-        <input type="text" value={worldName} onChange={({ target }) => setWorldName(target.value)} required />
-        <ReactQuill value={worldDescription} onChange={(value) => setWorldDescription(value)} formats={formats} modules={modules} />
-        <button>DONE</button>
-        <button onClick={handleDelete} value="button">DELETE</button>
-      </form>}
+      {hidden ?
+        <div className={styles.HiddenEditBox}>
+          <h1 onClick={toggle}>►</h1>
+          <h3>{worldName}</h3>
+        </div>
+        :
+        <div>
+          <div className={styles.OpenEditBox}>
+            <h1 onClick={toggle}>▼</h1>
+          </div>
+          <form className={styles.Form} onSubmit={onSubmit}>
+            Name/Title: <input type="text" value={worldName} onChange={({ target }) => setWorldName(target.value)} required />
+            <p>Description: </p><ReactQuill value={worldDescription} onChange={(value) => setWorldDescription(value)} formats={formats} modules={modules} />
+            <button onClick={toggle}>Done</button>
+            <button onClick={handleDelete} value="button">Delete</button>
+          </form>
+        </div>
+      }
     </div>
   );
 };

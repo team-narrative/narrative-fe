@@ -1,6 +1,7 @@
 const HtmlPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
+const CopyPlugin = require('copy-webpack-plugin');
   
 // eslint-disable-next-line no-undef
 module.exports = {
@@ -19,7 +20,10 @@ module.exports = {
     new CleanWebpackPlugin(),
     new Dotenv({
       systemvars:true
-    })
+    }),
+    new CopyPlugin ([
+      { from: 'public' }
+    ])
   ],
   module: {
     rules: [

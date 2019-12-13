@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddChapterButton component renders an add button 1`] = `
+<div
+  className="AddChapterButton"
+>
+  <EditFormModalChapter />
+  <button
+    type="button"
+  >
+    ⊕
+  </button>
+</div>
+`;
