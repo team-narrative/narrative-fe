@@ -1,22 +1,44 @@
-.LocationCategory {
-  background-color: #ccc;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-left: 1px solid black;
-  border-bottom: 1px solid black;
-  margin-bottom: 2%;
-
-  h2, div {
-    align-self: center;
+@media screen and (max-width: 640px) {
+  .LocationCategory {
+    background-color: #ccc;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 40px;
+    margin-bottom: 5px;
   }
 }
-
-.LocationCategoryContainer {
-  width: 85%;
-  height: 40%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@media screen and (min-width: 641px) and (max-width: 1007px) {
+  .LocationCategory {
+    background-color: #ccc;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50%;
+    margin-bottom: 5px;
+  }
+}
+@media screen and (min-width: 1008px) {
+  .LocationCategory {
+    background-color: #ccc;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-bottom: 2%;
+  
+    h2, div {
+      align-self: center;
+    }
+  }
+  
+  .LocationCategoryContainer {
+    width: 85%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

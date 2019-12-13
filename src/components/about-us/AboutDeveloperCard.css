@@ -1,17 +1,107 @@
-.AboutDeveloperCard {
-  background-color: yellow;
-  width: 30%;
-
-  div {
+@media screen and (max-width: 640px) {
+  .AboutDeveloperCard {
     background-color: palegreen;
+    margin: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 50px;
-  }
+    border: 5px solid navy;
+    padding: 5px;
 
-  img {
-    border-radius: 50%;
+    img {
+      width: 90%;
+      border-radius: 50%;
+    }
+
+    div {
+      width: 100%;
+      margin: 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      align-self: center;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 1.3em;
+      background: white;
+    }
+  }
+}
+@media screen and (min-width: 641px) and (max-width: 1007px) {
+  .AboutDeveloperCard {
+    background-color: palegreen;
+    margin: 10px;
+    display: flex;
+    border: 5px solid navy;
+    padding: 5px;
+
+    img {
+      width: 100%;
+      border-radius: 50%;
+    }
+
+    div {
+      width: 50%;
+      margin: 5px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 5px;
+    }
+
+    p {
+      height: 90%;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 1.3em;
+      background: white;
+      text-align: center;
+    }
+  }
+}
+@media screen and (min-width: 1008px) {
+  .AboutDeveloperCard {
+    background-color: palegreen;
+    margin: 10px;
+    display: flex;
+    border: 5px solid navy;
+    padding: 5px;
+
+    img {
+      width: 100%;
+      border-radius: 50%;
+    }
+
+    div {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 5px;
+    }
+
+    p {
+      height: 95%;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 1em;
+      background: white;
+      text-align: center;
+    }
   }
 }
