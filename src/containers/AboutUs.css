@@ -1,38 +1,71 @@
-.AboutUs {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+@media screen and (max-width: 640px) {
+  .AboutUs {
+    header {
+      padding: 5px;
+    }
 
-  header {
-    background-color: #251A18;
-    padding: 10px;
-  }
-
-  footer {
-    padding: 10px;
-    background-color: #ccc;
-    display: flex;
-    justify-content: center;
-    width: 100vw;
+    footer {
+      text-align: center;
+      padding: 5px;
+      background-color: #251A18;
+      color: #a0a0a0;
+    }
   }
 }
+@media screen and (min-width: 641px) and (max-width: 1007px) {
+  .AboutUs {
+    header {
+      padding: 5px;
+    }
 
-.AboutUsContainer {
-  display: flex;
-  height: 50%;
-  width: 95%;
-  margin: 10px;
-
-  div {
-    display: flex;
-    width: 50%;
-    padding: 10px;
-    justify-content: space-evenly;
+    footer {
+      text-align: center;
+      padding: 5px;
+      background-color: #251A18;
+      color: #a0a0a0;
+    }
   }
-
-  img {
-    width: 100%;
+}
+@media screen and (min-width: 1008px) {
+  .AboutUs {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    header {
+      padding: 10px;
+      height: 5vh;
+      width: 100%;
+    }
+  
+    footer {
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: 5vh;
+      background-color: #251A18;
+      color: #a0a0a0;
+    }
+  }
+  
+  .AboutUsContainer {
+    display: flex;
+    height: 50%;
+    width: 95%;
+    margin: 10px;
+  
+    div {
+      display: flex;
+      width: 50%;
+      padding: 10px;
+      justify-content: space-evenly;
+    }
+  
+    img {
+      width: 100%;
+    }
   }
 }
