@@ -7,7 +7,7 @@ import { setToken } from './services/request';
 const AuthContext = React.createContext();
 
 firebase.initializeApp({
-  apiKey: 'AIzaSyCowkfBDO-kM34LcE7l8w-xHYVT2uQMXbY',
+  apiKey: 'AIzaSyDaZuYCEiTOl_cQOwm7qbCbplbsv2VPoVI',
   authDomain: 'firenotes-2b948.firebaseapp.com',
   databaseURL: 'https://firenotes-2b948.firebaseio.com',
   projectId: 'firenotes-2b948',
